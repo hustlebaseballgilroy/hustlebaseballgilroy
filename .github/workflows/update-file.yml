@@ -3,6 +3,7 @@ name: Update File
 on:
   schedule:
     - cron: '0 * * * *'  # Runs every hour
+  workflow_dispatch:      # lets you run it by hand from the Actions tab
 
 # Needed so the job can push updated ICS files. The organization's default
 # GITHUB_TOKEN is read-only, so grant write access to repo contents here.
@@ -15,18 +16,25 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set environment variables
+      # GameChanger team calendar links (from the GameChanger app: team > gear >
+      # Schedule Sync). Each team has its own teamId and private token; tokens are
+      # stored as repo secrets. Update these when new season teams are created.
+      #
+      # File names are from last season and are kept so the Schedule page keeps
+      # working: hustle-10u.ics = the 11U team, hustle-11u.ics = the 12U team.
+      - name: Download 12U ICS file (saved as hustle-11u.ics)
         run: |
-          echo "gc_token_11u=${{ secrets.GC_TOKEN_11U }}" >> $GITHUB_ENV
-          echo "gc_token_10u=${{ secrets.GC_TOKEN_10U }}" >> $GITHUB_ENV
-      
-      - name: Download 11U ICS file
+          curl -sSf -o hustle-11u-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=a872b0bc-dacd-4b16-8b8d-08202e6610f4&token=${{ secrets.GC_CAL_TOKEN_12U }}"
+
+      - name: Download 11U ICS file (saved as hustle-10u.ics)
         run: |
-          curl -o hustle-11u-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=810f389e-3e8c-403b-83fa-54f652f45c37&token=${{ env.gc_token_11u }}"
-      
-      - name: Download 10U ICS file
+          curl -sSf -o hustle-10u-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=69e67ba1-584f-4da5-a6ed-a14a6b7d250c&token=${{ secrets.GC_CAL_TOKEN_11U }}"
+
+      - name: Make sure both calendars downloaded
         run: |
-          curl -o hustle-10u-temp.ics "https://api.team-manager.gc.com/ics-calendar-documents/user/9eeb60a3-c8fb-4fde-9f2c-a59e214e1109.ics?teamId=33d5f1bd-0c63-4819-b5b3-f2008a434daf&token=${{ env.gc_token_10u }}"
+          for f in hustle-11u-temp.ics hustle-10u-temp.ics; do
+            grep -q "BEGIN:VCALENDAR" "$f" || { echo "$f is not a calendar, keeping the old file"; exit 1; }
+          done
       
       - name: Remove DTSTAMP from 11U ICS
         run: sed -i '/^DTSTAMP:/d' hustle-11u-temp.ics
@@ -55,7 +63,7 @@ jobs:
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
             git config --global user.name "github-actions[bot]"
             git add hustle-11u.ics hustle-10u.ics
-            git commit -m "Update 11U and/or 10U ICS files"
+            git commit -m "Update team calendars from GameChanger"
             git push
           else
             echo "No ICS updates needed."
