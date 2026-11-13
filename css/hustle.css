@@ -245,11 +245,6 @@ section.band{padding:clamp(58px,8vw,104px) 0;position:relative}
 .info-row .lbl{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);line-height:1.4}
 .info-row .val{font-family:Anton,sans-serif;font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.12;text-transform:uppercase;letter-spacing:.01em}
 .info-row .val small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:.88rem;color:var(--mist);letter-spacing:0;text-transform:none;margin-top:5px;line-height:1.45}
-.reg-box{margin-top:8px;padding:20px;background:rgba(43,155,245,.08);box-shadow:inset 0 0 0 1px rgba(43,155,245,.3);
-  clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
-.reg-box .lbl{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;font-size:.74rem;text-transform:uppercase;color:var(--blue)}
-.reg-box a{font-family:Anton,sans-serif;font-size:clamp(1rem,2.1vw,1.35rem);color:#fff;word-break:break-word}
-.reg-box a:hover{color:var(--pink)}
 .side-stack{display:grid;gap:22px}
 .equip{--c:16px;background:#0b0d12;box-shadow:inset 0 0 0 2px var(--pink);padding:24px;text-align:center}
 .equip h4{font-family:Anton,sans-serif;text-transform:uppercase;color:var(--blue);letter-spacing:.06em;margin:0 0 14px;font-size:1.15rem}

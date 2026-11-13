@@ -30,10 +30,6 @@
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12A7 7 0 1 0 5 10c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
           <div><div class="lbl">Location</div><div class="val">{{ t.venue | default: tba }}{% if t.address %}<small>{{ t.address }}</small>{% endif %}</div></div>
         </div>
-        <div class="reg-box">
-          <div class="lbl">Register</div>
-          <a href="mailto:{{ t.email }}">{{ t.email }}</a>
-        </div>
         <div class="t-actions">
           <a class="btn btn-pink btn-sm" href="/signup.html#register">Register Online</a>
           {%- if t.date %}
