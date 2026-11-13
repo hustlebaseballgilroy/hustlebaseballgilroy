@@ -165,7 +165,17 @@ description: Register for Hustle Baseball's 11U and 12U youth travel baseball te
         <button class="btn btn-ghost btn-sm" type="button" id="rfAgain">Register another player</button>
       </div>
     </div></div>
-    <p class="form-fallback">Having trouble? <a class="link" href="{{ gform }}/viewform" target="_blank" rel="noopener">Use the Google Form instead</a> or email <a class="link" href="mailto:{{ t.email }}">{{ t.email }}</a>.</p>
+    <div class="form-help cham">
+      <div class="fh-ico" aria-hidden="true">?</div>
+      <div class="fh-txt">
+        <b>Having trouble with the form?</b>
+        <span>Use our Google Form instead, or email <a href="mailto:{{ t.email }}">{{ t.email }}</a> and a coach will help you register.</span>
+      </div>
+      <div class="fh-actions">
+        <a class="btn btn-ghost btn-sm" href="{{ gform }}/viewform" target="_blank" rel="noopener">Open Google Form</a>
+        <a class="btn btn-ghost btn-sm" href="mailto:{{ t.email }}">Email Us</a>
+      </div>
+    </div>
     <script src="/js/register.js" defer></script>
   </div>
 </section>

@@ -742,7 +742,15 @@ nav.main a.btn-nav[aria-current="page"]{background:var(--blue)}
 .rf-done .btn{border:0;cursor:pointer}
 .rf-check{width:72px;height:72px;margin:0 auto;display:grid;place-items:center;font-size:2.4rem;color:#fff;
   background:linear-gradient(140deg,var(--pink),var(--blue));clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)}
-.form-fallback{margin-top:12px;color:var(--mist);font-size:.9rem}
+.form-help{--c:14px;margin-top:18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 22px;
+  background:rgba(43,155,245,.08);box-shadow:inset 0 0 0 1px rgba(43,155,245,.4)}
+.fh-ico{flex:0 0 auto;width:44px;height:44px;display:grid;place-items:center;font-family:Anton,sans-serif;font-size:1.6rem;color:#fff;background:var(--blue);
+  clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)}
+.fh-txt{flex:1 1 260px;min-width:0}
+.fh-txt b{display:block;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.03em;font-size:1.15rem;color:#fff}
+.fh-txt span{color:var(--mist);font-size:.92rem}
+.fh-actions{display:flex;flex-wrap:wrap;gap:10px}
+.fh-txt span a{color:#fff;text-decoration:underline;word-break:break-word}
 
 /* contact */
 .contact-card{--c:18px;padding:2px;background:linear-gradient(150deg,var(--pink),var(--blue))}
