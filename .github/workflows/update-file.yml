@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 * * * *'  # Runs every hour
 
+# Needed so the job can push updated ICS files. The organization's default
+# GITHUB_TOKEN is read-only, so grant write access to repo contents here.
+permissions:
+  contents: write
+
 jobs:
   update-file:
     runs-on: ubuntu-latest
