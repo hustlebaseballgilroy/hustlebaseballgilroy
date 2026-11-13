@@ -9,7 +9,7 @@ description: Register for Hustle Baseball's 11U and 12U youth travel baseball te
   <div class="wrap">
     <p class="crumbs"><a href="/">Home</a> / Join</p>
     <h1>Join <span class="brush">Hustle</span></h1>
-    <p class="lede">{{ t.season }} registration for our {{ t.divisions | join: " and " }} travel baseball teams. Fill out the form below and our coaching staff will reach out with next steps, including tryout information.</p>
+    <p class="lede">{{ site.data.registration.season }} registration for our {{ t.divisions | join: " and " }} travel baseball teams. Fill out the form below and our coaching staff will reach out with next steps, including tryout information.</p>
     <div class="cta-row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
       <a class="btn btn-pink" href="#register">Register Now</a>
       <a class="btn btn-ghost" href="#tryouts">Tryout Details</a>
@@ -58,13 +58,113 @@ description: Register for Hustle Baseball's 11U and 12U youth travel baseball te
     <div class="sec-head">
       <p class="eyebrow">Registration</p>
       <h2 class="sec">Registration <span class="brush">Form</span></h2>
-      <p class="lede" style="margin-top:14px">Takes a few minutes. Our coaches review every registration and follow up by email.</p>
+      <p class="lede" style="margin-top:14px">Takes about two minutes. Our coaches review every registration and follow up by email.</p>
     </div>
+    {%- assign r = site.data.registration -%}
+    {%- assign gform = "https://docs.google.com/forms/d/e/" | append: r.form_id -%}
     <div class="form-shell cham"><div class="inner cham">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScujtv7dH4aNuC-ZkE0gcpEdQSHqjeJuw0dHbsYTYjo5qYdMA/viewform?embedded=true"
-              title="Hustle Baseball registration form" loading="lazy">Loading…</iframe>
+      <!-- Fields map to the Google Form in _data/registration.yml. Keep the two in sync. -->
+      <form class="reg-form" id="regForm" novalidate
+            data-action="{{ gform }}/formResponse"
+            data-dob="{{ r.fields.dob }}" data-heard="{{ r.fields.heard }}">
+        <div class="rf-head">
+          <span class="rf-tag">{{ r.season }}</span>
+          <h3>Player <span class="brush">Registration</span></h3>
+          <p>Tell us about your player and we'll reach out with tryout details. Fields marked <b class="req">*</b> are required.</p>
+        </div>
+
+        <fieldset>
+          <legend>Parent / Guardian</legend>
+          <div class="rf-grid">
+            <div class="rf-field">
+              <label for="rfParent">Name <b class="req">*</b></label>
+              <input id="rfParent" name="{{ r.fields.parent }}" type="text" autocomplete="name" required>
+            </div>
+            <div class="rf-field">
+              <label for="rfEmail">Email <b class="req">*</b></label>
+              <input id="rfEmail" name="emailAddress" type="email" autocomplete="email" required>
+            </div>
+            <div class="rf-field">
+              <label for="rfPhone">Phone</label>
+              <input id="rfPhone" name="{{ r.fields.phone }}" type="tel" autocomplete="tel">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Player</legend>
+          <div class="rf-grid">
+            <div class="rf-field">
+              <label for="rfPlayer">Player name <b class="req">*</b></label>
+              <input id="rfPlayer" name="{{ r.fields.player }}" type="text" required>
+            </div>
+            <div class="rf-field">
+              <label for="rfDob">Date of birth <b class="req">*</b></label>
+              <input id="rfDob" type="date" required>
+            </div>
+          </div>
+
+          <div class="rf-group" role="radiogroup" aria-labelledby="rfDivL" data-required>
+            <span class="rf-label" id="rfDivL">Age group trying out for <b class="req">*</b></span>
+            <div class="rf-pills big">
+              {%- for d in r.divisions %}
+              <label class="pill"><input type="radio" name="{{ r.fields.division }}" value="{{ d }}"><span>{{ d | upcase }}</span></label>
+              {%- endfor %}
+            </div>
+          </div>
+
+          <div class="rf-group" role="radiogroup" aria-labelledby="rfPosPL" data-required>
+            <span class="rf-label" id="rfPosPL">Primary position <b class="req">*</b></span>
+            <div class="rf-pills">
+              {%- for p in r.positions %}
+              <label class="pill"><input type="radio" name="{{ r.fields.pos_primary }}" value="{{ p }}"><span>{{ p }}</span></label>
+              {%- endfor %}
+            </div>
+          </div>
+
+          <div class="rf-group" role="radiogroup" aria-labelledby="rfPosSL" data-required>
+            <span class="rf-label" id="rfPosSL">Secondary position <b class="req">*</b></span>
+            <div class="rf-pills">
+              {%- for p in r.positions %}
+              <label class="pill alt"><input type="radio" name="{{ r.fields.pos_secondary }}" value="{{ p }}"><span>{{ p }}</span></label>
+              {%- endfor %}
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>A little more</legend>
+          <div class="rf-group" role="radiogroup" aria-labelledby="rfHeardL">
+            <span class="rf-label" id="rfHeardL">How did you hear about us?</span>
+            <div class="rf-pills">
+              {%- for h in r.heard_options %}
+              <label class="pill"><input type="radio" name="{{ r.fields.heard }}" value="{{ h }}"><span>{{ h }}</span></label>
+              {%- endfor %}
+              <label class="pill"><input type="radio" name="{{ r.fields.heard }}" value="__other_option__"><span>Other</span></label>
+            </div>
+            <input class="rf-other" id="rfHeardOther" type="text" placeholder="Tell us where" aria-label="Where did you hear about us?" hidden>
+          </div>
+          <div class="rf-field">
+            <label for="rfComments">Comments or questions</label>
+            <textarea id="rfComments" name="{{ r.fields.comments }}" rows="4"></textarea>
+          </div>
+        </fieldset>
+
+        <p class="rf-error" id="rfError" role="alert" hidden></p>
+        <div class="rf-actions">
+          <button class="btn btn-pink" type="submit">Submit Registration <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+
+      <div class="rf-done" id="rfDone" hidden tabindex="-1">
+        <div class="rf-check" aria-hidden="true">✓</div>
+        <h3>You're <span class="brush">in!</span></h3>
+        <p>Thanks for registering. A coach will follow up by email with tryout details.</p>
+        <button class="btn btn-ghost btn-sm" type="button" id="rfAgain">Register another player</button>
+      </div>
     </div></div>
-    <p class="form-fallback">Form not loading? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScujtv7dH4aNuC-ZkE0gcpEdQSHqjeJuw0dHbsYTYjo5qYdMA/viewform" target="_blank" rel="noopener">Open it in a new tab</a> or email <a class="link" href="mailto:{{ t.email }}">{{ t.email }}</a>.</p>
+    <p class="form-fallback">Having trouble? <a class="link" href="{{ gform }}/viewform" target="_blank" rel="noopener">Use the Google Form instead</a> or email <a class="link" href="mailto:{{ t.email }}">{{ t.email }}</a>.</p>
+    <script src="/js/register.js" defer></script>
   </div>
 </section>
 
