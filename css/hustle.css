@@ -123,6 +123,12 @@ nav.main a:hover::after{transform:scaleX(1)}
 .btn-nav::after{display:none}
 .btn-nav:hover{background:var(--blue);transform:translateY(-1px)}
 .burger{display:none}
+/* mid-size screens: tighten the menu so it stays on one line until the burger takes over at 960px */
+@media (max-width:1180px){
+  nav.main a{padding:8px 7px;letter-spacing:.06em;font-size:.9rem}
+  nav.main a::after{left:7px;right:7px}
+  .btn-nav{margin-left:6px;padding:10px 12px;letter-spacing:.08em}
+}
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;background:var(--ink);padding:clamp(48px,7vw,96px) 0 0}
