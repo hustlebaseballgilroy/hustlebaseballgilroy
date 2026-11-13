@@ -39,7 +39,7 @@
   // ---- tryouts: Add to Calendar (.ics) ----
   var block = document.querySelector('.tryout-block');
   var icsLink = document.querySelector('.js-ics');
-  if (block && icsLink) {
+  if (block && icsLink && block.dataset.tryoutDate) {
     var d = block.dataset, day = d.tryoutDate.replace(/-/g, '');
     var t = function (hm) { return hm.replace(':', '') + '00'; };
     var esc = function (s) { return String(s).replace(/([,;\\])/g, '\\$1'); };

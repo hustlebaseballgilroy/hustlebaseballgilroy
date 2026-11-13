@@ -66,7 +66,8 @@ description: Register for Hustle Baseball's 11U and 12U youth travel baseball te
       <!-- Fields map to the Google Form in _data/registration.yml. Keep the two in sync. -->
       <form class="reg-form" id="regForm" novalidate
             data-action="{{ gform }}/formResponse"
-            data-dob="{{ r.fields.dob }}" data-heard="{{ r.fields.heard }}">
+            data-dob="{{ r.fields.dob }}" data-heard="{{ r.fields.heard }}" data-division="{{ r.fields.division }}"
+            data-cutoffs='[{% for c in t.cutoffs %}{"d":"{{ c.division }}","on":"{{ c.born_on_or_after }}","label":"{{ c.label }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]'>
         <div class="rf-head">
           <span class="rf-tag">{{ r.season }}</span>
           <h3>Player <span class="brush">Registration</span></h3>
@@ -100,7 +101,8 @@ description: Register for Hustle Baseball's 11U and 12U youth travel baseball te
             </div>
             <div class="rf-field">
               <label for="rfDob">Date of birth <b class="req">*</b></label>
-              <input id="rfDob" type="date" required>
+              <input id="rfDob" type="date" required min="2005-01-01" max="2024-12-31">
+              <p class="rf-hint" id="rfDobHint" aria-live="polite"></p>
             </div>
           </div>
 

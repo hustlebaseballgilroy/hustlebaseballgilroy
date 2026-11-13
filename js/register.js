@@ -28,6 +28,50 @@
     if (f) f.classList.remove('bad');
   });
 
+  // Suggest the age group from the birth date (cutoffs from _data/tryouts.yml).
+  // Picks the matching 11U/12U button unless the parent already chose one themselves.
+  var hint = document.getElementById('rfDobHint');
+  var divName = form.getAttribute('data-division');
+  var cuts = [];
+  try { cuts = JSON.parse(form.getAttribute('data-cutoffs')); } catch (e) {}
+  var autoPicked = false;
+  form.addEventListener('change', function (e) {
+    if (e.target.name === divName) autoPicked = false;
+  });
+  dob.addEventListener('change', function () {
+    hint.className = 'rf-hint';
+    hint.textContent = '';
+    if (!dob.value || !cuts.length) return;
+    var born = new Date(dob.value + 'T12:00:00'), match = null;
+    for (var i = 0; i < cuts.length; i++) {
+      if (born >= new Date(cuts[i].on + 'T00:00:00')) { match = cuts[i]; break; }
+    }
+    if (!match) {
+      if (autoPicked) {
+        var picked = form.querySelector('input[name="' + divName + '"]:checked');
+        if (picked) picked.checked = false;
+        autoPicked = false;
+      }
+      hint.classList.add('warn');
+      hint.textContent = 'Born before ' + cuts[cuts.length - 1].label + ', which is older than our ' +
+        cuts.map(function (c) { return c.d; }).join(' and ') + ' cutoffs. Mention it in the comments and a coach will follow up.';
+      return;
+    }
+    hint.classList.add('ok');
+    hint.textContent = 'Eligible for ' + match.d + ' (born on or after ' + match.label + ').';
+    var current = form.querySelector('input[name="' + divName + '"]:checked');
+    if (!current || autoPicked) {
+      var pill = form.querySelector('input[name="' + divName + '"][value="' + match.d.toLowerCase() + '"]');
+      if (pill) { pill.checked = true; autoPicked = true; pill.closest('.rf-group').classList.remove('bad'); }
+    } else if (current.value !== match.d.toLowerCase()) {
+      var order = cuts.map(function (c) { return c.d.toLowerCase(); }); // youngest group first
+      hint.textContent += order.indexOf(current.value) > order.indexOf(match.d.toLowerCase())
+        ? ' You picked ' + current.value.toUpperCase() + ' (playing up). That works, a coach will confirm.'
+        : ' You picked ' + current.value.toUpperCase() + ', but this player is too old for it. Please choose ' + match.d + '.';
+      if (hint.textContent.indexOf('too old') > -1) hint.className = 'rf-hint warn';
+    }
+  });
+
   function invalid() {
     var bad = [];
     form.querySelectorAll('input[required]').forEach(function (el) {
@@ -91,6 +135,7 @@
   document.getElementById('rfAgain').addEventListener('click', function () {
     // Keep the parent's details, clear the player's.
     ['rfPlayer', 'rfDob', 'rfComments'].forEach(function (id) { document.getElementById(id).value = ''; });
+    hint.textContent = ''; hint.className = 'rf-hint'; autoPicked = false;
     form.querySelectorAll('.rf-group input:checked').forEach(function (el) { el.checked = false; });
     other.hidden = true; other.value = '';
     done.hidden = true;
