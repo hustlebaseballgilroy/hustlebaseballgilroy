@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%- assign path = page.url | replace: 'index.html', '' -%}
+{%- assign canonical = site.url | append: path -%}
+{%- assign desc = page.description | default: "Hustle Baseball is a competitive youth travel baseball organization in Gilroy, California, offering 11U and 12U teams focused on fundamentals, sportsmanship and hustle." -%}
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ desc }}">
+<meta name="author" content="Hustle Baseball">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#07080b">
+<link rel="canonical" href="{{ canonical }}">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hustle Baseball">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:title" content="{{ page.og_title | default: page.title }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:image" content="{{ site.url }}/logo3.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.og_title | default: page.title }}">
+<meta name="twitter:description" content="{{ desc }}">
+<meta name="twitter:image" content="{{ site.url }}/logo3.png">
+
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/hustle.css">
+
+<!-- Google tag (gtag.js): Analytics + Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EK72WWNR3Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EK72WWNR3Z');
+  gtag('config', 'AW-17128081732');
+</script>
+{{ page.head_extra }}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+{% include ticker.html %}
+{% include header.html %}
+
+<main id="main">
+{{ content }}
+</main>
+
+{% include footer.html %}
+
+<script src="/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Tryout details shown on the home page, the Join page, the ticker and the FAQ.
+# Update this one file for each new tryout. After `date` passes, the site
+# automatically shows a "these tryouts have ended" note and hides the
+# Add to Calendar button until new dates are entered here.
+season: Summer/Fall 2026
+date: 2026-06-10            # YYYY-MM-DD
+date_label: June 10, 2026
+start: "17:30"              # 24-hour, Pacific time
+end: "19:30"
+time_label: 5:30 PM – 7:30 PM
+divisions: [11U, 12U]
+venue: Paradise Park Softball Field
+address: 365 La Crosse Dr, Morgan Hill, CA 95037
+maps_url: https://maps.google.com/?q=365+La+Crosse+Dr,+Morgan+Hill,+CA+95037
+email: tryouts@hustlebaseballgilroy.org
+equipment: [Bat, Helmet, Glove, Cleats]
+flyer: images/summer-fall-2026-tryouts.webp
+# Age cutoffs: a player is eligible for a division if born on or after the date.
+cutoffs:
+  - division: 11U
+    born_on_or_after: 2015-05-01
+    label: May 1, 2015
+  - division: 12U
+    born_on_or_after: 2014-05-01
+    label: May 1, 2014

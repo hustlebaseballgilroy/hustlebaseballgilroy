@@ -1,614 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hustle Baseball - Gilroy Travel Baseball Team | Youth Baseball in Gilroy, CA</title>
-<meta name="description" content="Hustle Baseball is a competitive youth travel baseball organization in Gilroy, California. Join our travel baseball team for skill development, tournaments, and character building. Established 2024.">
-<meta name="keywords" content="travel baseball, gilroy baseball, gilroy little league, youth baseball gilroy, travel baseball team, baseball tournaments, gilroy ca baseball, competitive youth baseball, baseball tryouts gilroy, travel baseball organization">
-<meta name="author" content="Hustle Baseball">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hustlebaseballgilroy.org/">
-<meta property="og:title" content="Hustle Baseball - Gilroy Travel Baseball Team">
-<meta property="og:description" content="Competitive youth travel baseball organization in Gilroy, California. Join our travel baseball team for skill development and tournaments.">
-<meta property="og:image" content="https://hustlebaseballgilroy.org/logo3.png">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://hustlebaseballgilroy.org/">
-<meta property="twitter:title" content="Hustle Baseball - Gilroy Travel Baseball Team">
-<meta property="twitter:description" content="Competitive youth travel baseball organization in Gilroy, California. Join our travel baseball team for skill development and tournaments.">
-<meta property="twitter:image" content="https://hustlebaseballgilroy.org/logo3.png">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://hustlebaseballgilroy.org/">
-
-
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsOrganization",
-  "name": "Hustle Baseball",
-  "description": "Competitive youth travel baseball organization in Gilroy, California",
-  "url": "https://hustlebaseballgilroy.org",
-  "logo": "https://hustlebaseballgilroy.org/logo3.png",
-  "foundingDate": "2024",
-  "nonprofitStatus": "Nonprofit501c3",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Gilroy",
-    "addressRegion": "CA",
-    "addressCountry": "US"
-  },
-  "sport": "Baseball",
-  "areaServed": {
-    "@type": "City",
-    "name": "Gilroy"
-  },
-  "sameAs": [
-    "https://hustlebaseballgilroy.org"
-  ]
-}
-</script>
-<link rel="icon" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#07080b;
-  --ink-2:#0e1016;
-  --ink-3:#15181f;
-  --pink:#ff1478;
-  --pink-d:#d9095f;
-  --pink-l:#ff67a6;
-  --blue:#2b9bf5;
-  --blue-d:#0a76d1;
-  --blue-l:#8ccdfb;
-  --white:#fff;
-  --mist:#aab3c2;
-  --edge:rgba(255,255,255,.1);
-  --chamfer:18px;
-  --maxw:1220px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--ink);color:var(--white);
-  font-family:Inter,system-ui,sans-serif;line-height:1.6;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-
-/* ---------- shared type ---------- */
-.eyebrow{
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  text-transform:uppercase;letter-spacing:.22em;font-size:.82rem;
-  color:var(--blue);
-}
-h2.sec{
-  font-family:Anton,sans-serif;font-weight:400;
-  font-size:clamp(2.2rem,5.5vw,4rem);line-height:.92;
-  text-transform:uppercase;letter-spacing:.01em;margin:.25rem 0 0;
-}
-.brush{font-family:'Kaushan Script',cursive;text-transform:none;letter-spacing:0;color:var(--pink)}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.lede{color:var(--mist);font-size:1.05rem;max-width:62ch}
-
-/* ---------- textures ---------- */
-.halftone{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(circle at center, currentColor 1.4px, transparent 1.5px);
-  background-size:9px 9px;opacity:.5;
-}
-.splat{position:absolute;pointer-events:none;filter:blur(.4px)}
-.streak{
-  position:absolute;pointer-events:none;border-radius:50%;
-  filter:blur(38px);opacity:.55;
-}
-
-/* ---------- chamfered frame ---------- */
-.cham{
-  --c:var(--chamfer);
-  clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c));
-}
-.frame{padding:2px;background:linear-gradient(135deg,var(--pink),var(--blue))}
-.frame>.inner{background:var(--ink-2)}
-
-/* ---------- ticker ---------- */
-.ticker{
-  background:linear-gradient(90deg,var(--pink),var(--blue));
-  overflow:hidden;position:relative;z-index:60;
-}
-.ticker-track{
-  display:flex;gap:0;white-space:nowrap;
-  animation:slide 26s linear infinite;
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;
-  padding:9px 0;
-}
-.ticker-track span{padding:0 22px;opacity:.95}
-.ticker-track span::after{content:'◆';margin-left:22px;opacity:.5;font-size:.6em;vertical-align:middle}
-@keyframes slide{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
-
-/* ---------- nav ---------- */
-header.site{
-  position:sticky;top:0;z-index:50;
-  background:rgba(7,8,11,.88);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--edge);
-}
-.navbar{
-  max-width:var(--maxw);margin:0 auto;padding:10px 24px;
-  display:flex;align-items:center;gap:18px;
-}
-.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
-/* Brand mark uses the splatter artwork cropped to a round crest — at nav size a
-   full-bleed rectangle reads as a dark box, while the circular crop keeps the
-   player legible and the pink ring ties back to the palette. */
-.brand img{
-  height:54px;width:54px;object-fit:cover;object-position:62% 42%;
-  border-radius:50%;
-  box-shadow:0 0 0 2px var(--pink),0 0 18px rgba(255,20,120,.45);
-}
-.brand .txt{font-family:Anton,sans-serif;font-size:1.35rem;line-height:.9;text-transform:uppercase;letter-spacing:.01em}
-.brand .txt small{
-  display:block;font-family:'Barlow Condensed',sans-serif;font-size:.62rem;
-  letter-spacing:.3em;color:var(--pink);font-weight:600;margin-top:3px;
-}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
-nav.main a{
-  font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.95rem;
-  text-transform:uppercase;letter-spacing:.09em;padding:8px 11px;color:#dfe4ec;
-  position:relative;transition:color .2s;
-}
-nav.main a::after{
-  content:'';position:absolute;left:11px;right:11px;bottom:2px;height:2px;
-  background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .25s;
-}
-nav.main a:hover{color:#fff}
-nav.main a:hover::after{transform:scaleX(1)}
-.btn-nav{
-  margin-left:10px;padding:10px 18px;background:var(--pink);color:#fff !important;
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;
-  letter-spacing:.12em;font-size:.9rem;
-  clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);
-  transition:background .2s,transform .2s;
-}
-.btn-nav::after{display:none}
-.btn-nav:hover{background:var(--blue);transform:translateY(-1px)}
-.burger{display:none}
-
-/* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;background:var(--ink);padding:clamp(48px,7vw,96px) 0 0}
-.hero-bg{position:absolute;inset:0;overflow:hidden}
-.hero-bg .streak.a{width:min(70vw,900px);height:340px;left:-14%;top:-6%;background:var(--pink);transform:rotate(-22deg)}
-.hero-bg .streak.b{width:min(62vw,780px);height:300px;right:-12%;top:14%;background:var(--blue);transform:rotate(-18deg)}
-.hero-bg .streak.c{width:min(50vw,620px);height:240px;left:22%;bottom:-14%;background:var(--pink-d);opacity:.35;transform:rotate(-24deg)}
-.hero-bg .dots{
-  position:absolute;inset:0;color:var(--pink);
-  background-image:radial-gradient(circle at center,currentColor 1.5px,transparent 1.6px);
-  background-size:11px 11px;opacity:.28;
-  -webkit-mask-image:linear-gradient(118deg,#000 0 22%,transparent 52%);
-          mask-image:linear-gradient(118deg,#000 0 22%,transparent 52%);
-}
-.hero-bg .dots2{
-  position:absolute;inset:0;color:var(--blue);
-  background-image:radial-gradient(circle at center,currentColor 1.5px,transparent 1.6px);
-  background-size:13px 13px;opacity:.3;
-  -webkit-mask-image:linear-gradient(298deg,#000 0 20%,transparent 50%);
-          mask-image:linear-gradient(298deg,#000 0 20%,transparent 50%);
-}
-.hero-inner{
-  position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 24px 0;
-  display:grid;grid-template-columns:1.25fr .85fr;gap:40px;align-items:center;
-}
-.hero h1{
-  font-family:Anton,sans-serif;font-weight:400;margin:14px 0 0;
-  font-size:clamp(3.4rem,11vw,8.2rem);line-height:.82;text-transform:uppercase;
-  letter-spacing:-.005em;
-}
-.hero h1 .l1{display:block;position:relative;color:#fff;
-  text-shadow:4px 4px 0 var(--pink-d), 8px 8px 0 rgba(43,155,245,.55);}
-.hero h1 .l2{display:block;color:#fff;
-  text-shadow:4px 4px 0 var(--blue-d), 8px 8px 0 rgba(255,20,120,.5);}
-.hero .kicker{
-  font-family:'Kaushan Script',cursive;color:var(--pink);
-  font-size:clamp(1.8rem,4.6vw,3.1rem);line-height:1;transform:rotate(-3deg);
-  display:inline-block;margin-top:18px;
-  text-shadow:0 0 34px rgba(255,20,120,.55);
-}
-.hero p.sub{color:#c8d0dc;font-size:clamp(1rem,1.5vw,1.16rem);max-width:46ch;margin:14px 0 0}
-.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 clamp(40px,6vw,72px)}
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;
-  letter-spacing:.14em;font-size:1.02rem;padding:15px 30px;
-  clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);
-  transition:transform .2s,background .2s,color .2s;
-}
-.btn-pink{background:var(--pink);color:#fff}
-.btn-pink:hover{background:#fff;color:var(--ink);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px var(--blue)}
-.btn-ghost:hover{background:var(--blue);transform:translateY(-2px)}
-.hero-art{position:relative}
-.hero-art img{
-  width:100%;max-width:460px;margin-left:auto;
-  filter:drop-shadow(0 22px 44px rgba(0,0,0,.7)) drop-shadow(0 0 46px rgba(43,155,245,.55));
-}
-.hero-art .badge{
-  position:absolute;right:2%;bottom:2%;
-  background:var(--ink);box-shadow:inset 0 0 0 2px var(--pink);
-  padding:12px 18px;text-align:center;transform:rotate(-6deg);
-  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
-}
-.hero-art .badge b{display:block;font-family:Anton,sans-serif;font-size:1.5rem;line-height:1}
-.hero-art .badge span{font-family:'Barlow Condensed',sans-serif;font-size:.66rem;letter-spacing:.24em;color:var(--blue)}
-
-/* stat strip */
-.stats{
-  position:relative;z-index:2;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);
-  background:rgba(0,0,0,.45);
-}
-.stats-in{
-  max-width:var(--maxw);margin:0 auto;padding:0 24px;
-  display:grid;grid-template-columns:repeat(4,1fr);
-}
-.stat{padding:22px 8px;text-align:center;border-left:1px solid var(--edge)}
-.stat:first-child{border-left:0}
-.stat b{display:block;font-family:Anton,sans-serif;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1}
-.stat:nth-child(odd) b{color:var(--pink)}
-.stat:nth-child(even) b{color:var(--blue)}
-.stat span{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;color:var(--mist)}
-
-/* ---------- sections ---------- */
-section.band{padding:clamp(58px,8vw,104px) 0;position:relative}
-.sec-head{margin-bottom:38px}
-
-/* tryouts */
-#tryouts{background:
-  radial-gradient(1000px 420px at 88% 8%,rgba(43,155,245,.16),transparent 65%),
-  radial-gradient(900px 400px at 6% 92%,rgba(255,20,120,.16),transparent 65%),
-  var(--ink);}
-.tryout-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
-.tryout-card{--c:22px;padding:3px;background:linear-gradient(140deg,var(--pink),var(--blue) 70%)}
-.tryout-card>.inner{background:#0b0d12;padding:clamp(24px,3.2vw,38px)}
-.ages{
-  display:flex;align-items:stretch;margin:0 0 26px;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.14);
-}
-.age{flex:1;text-align:center;padding:18px 10px}
-.age + .age{border-left:2px solid rgba(255,255,255,.14)}
-.age b{display:block;font-family:Anton,sans-serif;font-size:clamp(2.6rem,7vw,4.6rem);line-height:.85}
-.age:first-child b{color:var(--blue)}
-.age:last-child b{color:var(--pink)}
-.age span{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.2em;color:var(--mist);text-transform:uppercase}
-.info-row{display:flex;gap:18px;align-items:flex-start;padding:16px 0;border-top:1px solid rgba(255,255,255,.09)}
-.info-row:first-of-type{border-top:0}
-.info-row .ico{
-  flex:0 0 44px;height:44px;display:grid;place-items:center;
-  background:rgba(255,20,120,.1);color:var(--pink);
-  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
-}
-.info-row .ico svg{width:22px;height:22px}
-.info-row .lbl{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);line-height:1.4}
-.info-row .val{font-family:Anton,sans-serif;font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.12;text-transform:uppercase;letter-spacing:.01em}
-.info-row .val small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:.88rem;color:var(--mist);letter-spacing:0;text-transform:none;margin-top:5px;line-height:1.45}
-.reg-box{margin-top:8px;padding:20px;background:rgba(43,155,245,.08);box-shadow:inset 0 0 0 1px rgba(43,155,245,.3);
-  clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
-.reg-box .lbl{font-family:'Barlow Condensed',sans-serif;letter-spacing:.2em;font-size:.74rem;text-transform:uppercase;color:var(--blue)}
-.reg-box a{font-family:Anton,sans-serif;font-size:clamp(1rem,2.1vw,1.35rem);color:#fff;word-break:break-word}
-.reg-box a:hover{color:var(--pink)}
-.side-stack{display:grid;gap:22px}
-.equip{--c:16px;background:#0b0d12;box-shadow:inset 0 0 0 2px var(--pink);padding:24px;text-align:center}
-.equip h4{font-family:Anton,sans-serif;text-transform:uppercase;color:var(--blue);letter-spacing:.06em;margin:0 0 14px;font-size:1.15rem}
-.equip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.equip li{font-family:Anton,sans-serif;text-transform:uppercase;font-size:1.05rem;letter-spacing:.03em}
-.equip li:not(:last-child)::after{content:'•';color:var(--pink);margin-left:10px}
-.note{--c:14px;background:rgba(255,255,255,.04);padding:18px 20px;font-size:.86rem;color:var(--mist);
-  box-shadow:inset 0 0 0 1px var(--edge)}
-.note b{color:#fff}
-.flyer-shot{--c:18px;padding:2px;background:linear-gradient(150deg,var(--blue),var(--pink))}
-.flyer-shot img{width:100%}
-
-/* about cards */
-.vmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
-.vmp-card{--c:18px;position:relative;padding:2px;background:linear-gradient(160deg,rgba(255,20,120,.6),rgba(43,155,245,.6));
-  transition:transform .25s}
-.vmp-card:hover{transform:translateY(-6px)}
-.vmp-card>.inner{background:var(--ink-2);padding:30px 26px;height:100%}
-.vmp-card .num{font-family:Anton,sans-serif;font-size:2.6rem;line-height:1;color:rgba(255,255,255,.13)}
-.vmp-card h3{font-family:Anton,sans-serif;text-transform:uppercase;font-size:1.5rem;margin:6px 0 10px;letter-spacing:.02em}
-.vmp-card:nth-child(1) h3{color:var(--pink)}
-.vmp-card:nth-child(2) h3{color:var(--blue)}
-.vmp-card:nth-child(3) h3{color:var(--pink)}
-.vmp-card p{margin:0;color:var(--mist);font-size:.97rem}
-
-/* teams */
-#teams{background:var(--ink-2)}
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:26px}
-.team{--c:20px;position:relative;overflow:hidden;background:#000;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end}
-.team img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;
-  transition:transform .5s,opacity .4s;filter:saturate(.85) contrast(1.05)}
-.team:hover img{transform:scale(1.06);opacity:.7}
-.team::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(7,8,11,.97) 8%,rgba(7,8,11,.5) 48%,transparent 100%)}
-.team .tint{position:absolute;inset:0;mix-blend-mode:color;opacity:.5}
-.team.a .tint{background:var(--blue)}
-.team.b .tint{background:var(--pink)}
-.team .body{position:relative;z-index:2;padding:30px}
-.team .tag{font-family:'Barlow Condensed',sans-serif;letter-spacing:.22em;font-size:.72rem;text-transform:uppercase;color:#fff;
-  background:var(--pink);display:inline-block;padding:5px 12px;margin-bottom:12px}
-.team.a .tag{background:var(--blue)}
-.team h3{font-family:Anton,sans-serif;font-size:clamp(2.4rem,5vw,3.4rem);line-height:.9;text-transform:uppercase;margin:0 0 10px}
-.team p{margin:0 0 16px;color:#d3dae4;font-size:.97rem;max-width:40ch}
-.team .roster{display:flex;flex-wrap:wrap;gap:8px}
-.team .roster span{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
-  padding:5px 10px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
-
-/* coaches */
-.coach-wrap{display:grid;gap:38px}
-.coach-group h3{font-family:Anton,sans-serif;text-transform:uppercase;font-size:1.6rem;margin:0 0 18px;
-  display:flex;align-items:center;gap:14px}
-.coach-group h3::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--pink),transparent)}
-.coach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.coach{--c:14px;background:var(--ink-3);padding:22px;box-shadow:inset 0 0 0 1px var(--edge);transition:box-shadow .25s,transform .25s}
-.coach:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--pink)}
-.coach .av{width:46px;height:46px;display:grid;place-items:center;font-family:Anton,sans-serif;font-size:1.1rem;
-  background:linear-gradient(135deg,var(--pink),var(--blue));margin-bottom:14px;
-  clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)}
-.coach b{display:block;font-family:Anton,sans-serif;font-size:1.22rem;text-transform:uppercase;letter-spacing:.02em}
-.coach span{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
-.coach p{margin:10px 0 0;font-size:.9rem;color:var(--mist)}
-
-/* board */
-#board{background:linear-gradient(180deg,var(--ink-2),var(--ink))}
-.board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
-.bm{--c:12px;padding:20px;background:rgba(255,255,255,.035);box-shadow:inset 0 0 0 1px var(--edge);text-align:center}
-.bm span{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
-.bm b{font-family:Anton,sans-serif;font-size:1.15rem;text-transform:uppercase;letter-spacing:.02em}
-
-/* sponsors */
-.tier{margin-bottom:34px}
-.tier-h{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.tier-h b{font-family:Anton,sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:1.1rem}
-.tier-h .chip{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
-  padding:4px 10px;color:#07080b;font-weight:700}
-.chip.plat{background:linear-gradient(135deg,#e9edf3,#a9b4c4)}
-.chip.gold{background:linear-gradient(135deg,#ffd76a,#d9a41d)}
-.chip.silv{background:linear-gradient(135deg,#d7dde6,#98a3b2)}
-.tier-h .rule{flex:1;height:1px;background:var(--edge)}
-.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
-.sp{--c:14px;background:#fff;padding:22px;text-align:center;transition:transform .25s,box-shadow .25s}
-.sp:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(255,20,120,.3)}
-.sp img{height:76px;width:auto;margin:0 auto 12px;object-fit:contain}
-.sp b{color:#111;font-family:'Barlow Condensed',sans-serif;font-size:1.02rem;letter-spacing:.06em;text-transform:uppercase}
-.sp.join{background:transparent;box-shadow:inset 0 0 0 2px var(--pink);display:grid;place-content:center;min-height:150px}
-.sp.join b{color:#fff;font-family:Anton,sans-serif;font-size:1.2rem}
-.sp.join span{color:var(--mist);font-size:.84rem;display:block;margin-top:6px}
-.sp.join:hover{background:rgba(255,20,120,.1)}
-
-/* gallery */
-#gallery{background:var(--ink-2)}
-.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.gal a{--c:12px;position:relative;aspect-ratio:4/3;overflow:hidden;background:#000}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:saturate(.9)}
-.gal a:hover img{transform:scale(1.09);filter:saturate(1.15)}
-.gal a::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,20,120,.35),rgba(43,155,245,.35));
-  opacity:0;transition:opacity .3s;mix-blend-mode:screen}
-.gal a:hover::after{opacity:1}
-
-/* final cta */
-#join{position:relative;overflow:hidden;text-align:center;
-  background:linear-gradient(120deg,var(--pink-d),var(--blue-d));}
-#join .halftone{color:#000;opacity:.28}
-#join .in{position:relative;z-index:2}
-#join h2{font-family:Anton,sans-serif;font-size:clamp(2.4rem,7vw,5rem);line-height:.9;text-transform:uppercase;margin:0 0 12px}
-#join p{color:rgba(255,255,255,.9);max-width:52ch;margin:0 auto 26px}
-.btn-dark{background:var(--ink);color:#fff}
-.btn-dark:hover{background:#fff;color:var(--ink)}
-
-/* footer */
-footer.site{background:#050608;padding:52px 0 26px;border-top:2px solid var(--pink)}
-.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:34px}
-footer.site .brand img{height:64px;width:64px}
-footer.site h5{font-family:Anton,sans-serif;text-transform:uppercase;font-size:1rem;letter-spacing:.1em;color:var(--blue);margin:0 0 14px}
-footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-footer.site a{color:var(--mist);font-size:.93rem}
-footer.site a:hover{color:var(--pink)}
-.f-bot{margin-top:36px;padding-top:20px;border-top:1px solid var(--edge);display:flex;flex-wrap:wrap;gap:12px;
-  justify-content:space-between;color:#6f7887;font-size:.82rem}
-
-/* ===== 1b additions ===== */
-/* tryout actions */
-.t-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.btn-sm{font-size:.86rem;padding:11px 18px;clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)}
-.btn-sm svg{width:16px;height:16px}
-
-/* division finder */
-.finder{--c:16px;background:#0b0d12;box-shadow:inset 0 0 0 2px var(--blue);padding:22px}
-.finder h4{font-family:Anton,sans-serif;text-transform:uppercase;color:#fff;letter-spacing:.04em;margin:0 0 4px;font-size:1.25rem}
-.finder h4 .brush{font-size:1.15em}
-.finder p.small{margin:0 0 14px;color:var(--mist);font-size:.86rem}
-.finder label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
-.finder input{width:100%;font:inherit;font-size:1rem;padding:12px 14px;border:0;background:rgba(255,255,255,.06);color:#fff;box-shadow:inset 0 0 0 1px var(--edge);color-scheme:dark;
-  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
-.finder input:focus{outline:none;box-shadow:inset 0 0 0 2px var(--pink)}
-.f-res{display:flex;gap:14px;align-items:center;margin-top:12px;min-height:58px;font-size:.92rem;color:#d3dae4}
-.f-res b{flex:0 0 auto;font-family:Anton,sans-serif;font-size:2.1rem;line-height:1;padding:6px 12px;background:rgba(255,255,255,.08);color:var(--mist);
-  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
-.f-res.u11 b{background:var(--blue);color:#fff}
-.f-res.u12 b{background:var(--pink);color:#fff}
-
-/* flip coach cards */
-.coach-grid.flips{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.fcoach{perspective:1100px;border:0;background:none;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer;height:270px;display:block;width:100%}
-.fcoach .in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,1.25,.5,1)}
-.fcoach[aria-pressed="true"] .in{transform:rotateY(180deg)}
-.fcoach .fa,.fcoach .ba{--c:16px;position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
-  clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
-.fcoach .fa{background:var(--ink-3);box-shadow:inset 0 0 0 1px var(--edge);padding:22px;display:flex;flex-direction:column;overflow:hidden;transition:box-shadow .25s}
-.fcoach:hover .fa{box-shadow:inset 0 0 0 2px var(--pink)}
-.fcoach .fa .ht{position:absolute;right:-20px;top:-20px;width:170px;height:170px;color:var(--pink);opacity:.3;
-  background-image:radial-gradient(circle at center,currentColor 1.4px,transparent 1.5px);background-size:9px 9px;
-  -webkit-mask-image:radial-gradient(circle at 70% 30%,#000,transparent 70%);mask-image:radial-gradient(circle at 70% 30%,#000,transparent 70%)}
-.fcoach.t12 .fa .ht{color:var(--blue)}
-.fcoach .ini{position:relative;font-family:Anton,sans-serif;font-size:4.6rem;line-height:.9;color:#fff;margin-top:6px;
-  text-shadow:4px 4px 0 var(--blue-d),8px 8px 0 rgba(255,20,120,.5)}
-.fcoach.t12 .ini{text-shadow:4px 4px 0 var(--pink-d),8px 8px 0 rgba(43,155,245,.55)}
-.fcoach .nm{margin-top:auto;position:relative}
-.fcoach .nm b{display:block;font-family:Anton,sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
-.fcoach .nm span{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
-.fcoach.t12 .nm span{color:var(--pink-l)}
-.fcoach .hint{position:absolute;right:16px;bottom:14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mist)}
-.fcoach .ba{transform:rotateY(180deg);padding:2px;background:linear-gradient(140deg,var(--pink),var(--blue))}
-.fcoach.t12 .ba{background:linear-gradient(140deg,var(--blue),var(--pink))}
-.fcoach .ba .bi{--c:15px;height:100%;background:#0b0d12;padding:22px;display:flex;flex-direction:column;
-  clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
-.fcoach .ba .q{font-family:'Kaushan Script',cursive;color:var(--pink);font-size:1.3rem;line-height:1;margin-bottom:8px}
-.fcoach .ba p{margin:0;color:#d3dae4;font-size:.95rem;line-height:1.55}
-.fcoach .ba .who{margin-top:auto;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
-.fcoach:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
-
-/* FAQ */
-#faq{background:var(--ink)}
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
-.faq-list{display:grid;gap:12px}
-.faq-list details{--c:14px;background:var(--ink-3);box-shadow:inset 0 0 0 1px var(--edge);transition:box-shadow .2s}
-.faq-list details[open]{box-shadow:inset 0 0 0 1px var(--pink)}
-.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;
-  font-family:Anton,sans-serif;text-transform:uppercase;font-size:1.08rem;letter-spacing:.02em}
-.faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary::after{content:'+';font-family:Anton,sans-serif;font-size:1.6rem;line-height:1;color:var(--pink);transition:transform .25s}
-.faq-list details[open] summary::after{transform:rotate(45deg)}
-.faq-list details p{margin:0;padding:0 22px 20px;color:var(--mist);font-size:.96rem}
-.faq-list details a{color:var(--blue-l)}
-
-/* mobile menu + sticky bar */
-.mobile-bar{display:none}
-@media (max-width:960px){
-  nav.main.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;
-    background:rgba(7,8,11,.98);border-bottom:2px solid var(--pink);padding:8px 24px 18px}
-  nav.main.open a{padding:14px 4px;border-bottom:1px solid var(--edge);font-size:1.1rem}
-  nav.main.open a::after{display:none}
-  nav.main.open .btn-nav{margin:14px 0 0;text-align:center;border-bottom:0}
-  .faq-grid{grid-template-columns:1fr;gap:20px}
-}
-@media (max-width:760px){
-  .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-    background:rgba(7,8,11,.94);backdrop-filter:blur(12px);border-top:2px solid var(--pink)}
-  .mobile-bar a{flex:1;justify-content:center;padding:13px 10px;font-size:.92rem}
-  footer.site{padding-bottom:96px}
-}
-@media (prefers-reduced-motion:reduce){.fcoach .in{transition:none}}
-
-/* ===== news / announcements ===== */
-#news{background:
-  radial-gradient(800px 360px at 100% 0%,rgba(255,20,120,.12),transparent 65%),var(--ink);padding-bottom:clamp(40px,6vw,70px)}
-.news-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
-.news-feature{--c:22px;padding:3px;background:linear-gradient(140deg,var(--pink),var(--blue) 75%)}
-.news-feature>.inner{--c:20px;background:#0b0d12;display:grid;grid-template-columns:1.35fr .65fr;gap:0}
-.news-feature .txt{padding:clamp(22px,3vw,36px)}
-.news-feature .art{position:relative;background:#000;overflow:hidden;min-height:260px}
-.news-feature .art{display:grid;place-items:center;padding:20px}
-.news-feature .art::before{content:'';position:absolute;inset:-30px;background:var(--bg) center/cover;filter:blur(22px) brightness(.45) saturate(1.2)}
-.news-feature .art img{position:relative;z-index:1;max-width:100%;max-height:520px;width:auto;height:auto;box-shadow:0 18px 40px rgba(0,0,0,.6)}
-.news-feature.noart>.inner{grid-template-columns:1fr}
-.news-feature.noart .art{display:none}
-.n-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
-.n-new{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;background:var(--pink);color:#fff;padding:4px 10px;
-  clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
-.n-date{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
-.news-feature h3{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:.98;margin:0 0 16px;letter-spacing:.01em}
-.n-body{color:#cfd6e2;font-size:.98rem}
-.n-body p{margin:0 0 12px}
-.n-body strong{color:#fff}
-.n-body ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:6px}
-.n-body li{position:relative;padding-left:20px}
-.n-body li::before{content:'';position:absolute;left:2px;top:.62em;width:7px;height:7px;background:var(--pink);transform:rotate(45deg)}
-.n-body a{color:var(--blue-l);text-decoration:underline;text-underline-offset:3px}
-.n-body a:hover{color:var(--pink-l)}
-.n-body img{display:none}
-.n-body hr{display:none}
-.news-older{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:18px}
-.n-card{--c:14px;background:var(--ink-3);box-shadow:inset 0 0 0 1px var(--edge);transition:box-shadow .2s}
-.n-card:hover,.n-card[open]{box-shadow:inset 0 0 0 1px var(--pink)}
-.n-card[open]{grid-column:1/-1}
-.n-card summary{list-style:none;cursor:pointer;padding:20px 22px}
-.n-card summary::-webkit-details-marker{display:none}
-.n-card summary h4{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:1.25rem;line-height:1.05;margin:0 0 8px;letter-spacing:.01em}
-.n-card summary .ex{color:var(--mist);font-size:.9rem;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.n-card summary .more{display:inline-block;margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}
-.n-card[open] summary .ex{display:none}
-.n-card[open] summary .more::after{content:' −'}
-.n-card .n-body{padding:0 22px 20px}
-.n-card .n-body img{display:block;max-width:min(420px,100%);height:auto;margin-top:10px}
-.news-more{margin-top:18px;text-align:center}
-.news-more button{border:0;cursor:pointer}
-.news-err{color:var(--mist)}
-@media (max-width:760px){
-  .news-feature>.inner{grid-template-columns:1fr}
-  .news-feature .art{order:-1;min-height:0}
-  .news-feature .art img{max-height:380px}
-}
-
-
-@media (max-width:960px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-art{order:-1;max-width:300px}
-  .hero-art img{margin:0 auto}
-  .tryout-grid{grid-template-columns:1fr}
-  .f-grid{grid-template-columns:1fr 1fr}
-  nav.main{display:none}
-  .burger{display:block;margin-left:auto;background:var(--pink);border:0;color:#fff;padding:11px 15px;
-    font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
-}
-@media (max-width:620px){
-  .stats-in{grid-template-columns:1fr 1fr}
-  .stat:nth-child(3){border-left:0}
-  .stat{border-top:1px solid var(--edge)}
-  .stats-in .stat:nth-child(-n+2){border-top:0}
-  .f-grid{grid-template-columns:1fr}
-}
-</style>
-</head>
-<body>
-
-<!-- ticker -->
-<div class="ticker">
-  <div class="ticker-track">
-    <span>Summer/Fall 2026 Tryouts</span><span>June 10 · 5:30–7:30 PM</span><span>11U &amp; 12U</span><span>Paradise Park, Morgan Hill</span><span>Est. 2024 · Gilroy, CA</span>
-    <span>Summer/Fall 2026 Tryouts</span><span>June 10 · 5:30–7:30 PM</span><span>11U &amp; 12U</span><span>Paradise Park, Morgan Hill</span><span>Est. 2024 · Gilroy, CA</span>
-  </div>
-</div>
-
-<!-- nav -->
-<header class="site">
-  <div class="navbar">
-    <a class="brand" href="#top">
-      <img src="images/redesign/mascot-splatter.png" alt="Hustle Baseball mascot logo">
-      <span class="txt">Hustle<br>Baseball<small>Gilroy · Est. 2024</small></span>
-    </a>
-    <nav class="main" id="mainnav">
-      <a href="#news">News</a>
-      <a href="#about">About</a>
-      <a href="#teams">Teams</a>
-      <a href="#coaches">Coaches</a>
-      <a href="#sponsors">Sponsors</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#faq">FAQ</a>
-      <a href="#join">Contact</a>
-      <a class="btn-nav" href="#tryouts">Tryouts</a>
-    </nav>
-    <button class="burger" aria-expanded="false" aria-controls="mainnav">Menu</button>
-  </div>
-</header>
-
+---
+layout: default
+title: Hustle Baseball - Gilroy Travel Baseball Team | Youth Baseball in Gilroy, CA
+og_title: Hustle Baseball - Gilroy Travel Baseball Team
+description: Hustle Baseball is a competitive youth travel baseball organization in Gilroy, California. Join our 11U and 12U travel baseball teams for skill development, tournaments, and character building.
+head_extra: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Hustle Baseball",
+    "description": "Competitive youth travel baseball organization in Gilroy, California",
+    "url": "https://hustlebaseballgilroy.org",
+    "logo": "https://hustlebaseballgilroy.org/logo3.png",
+    "foundingDate": "2024",
+    "nonprofitStatus": "Nonprofit501c3",
+    "taxID": "30-1433334",
+    "email": "info@hustlebaseballgilroy.org",
+    "address": {"@type": "PostalAddress", "addressLocality": "Gilroy", "addressRegion": "CA", "addressCountry": "US"},
+    "sport": "Baseball",
+    "areaServed": {"@type": "City", "name": "Gilroy"}
+  }
+  </script>
+---
+{%- assign t = site.data.tryouts -%}
 <!-- hero -->
 <section class="hero" id="top">
   <div class="hero-bg">
@@ -622,22 +36,22 @@ footer.site a:hover{color:var(--pink)}
       <span class="kicker">play hard. hustle harder.</span>
       <p class="sub">Competitive youth travel baseball built on fundamentals, sportsmanship, and relentless hustle — on the field and off it.</p>
       <div class="cta-row">
-        <a class="btn btn-pink" href="#tryouts">2026 Tryouts
+        <a class="btn btn-pink" href="/signup.html">Join Hustle
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a class="btn btn-ghost" href="#teams">Our Teams</a>
       </div>
     </div>
     <div class="hero-art">
-      <img src="images/redesign/mascot.png" alt="Hustle Baseball mascot — player at bat">
+      <img src="/images/redesign/mascot.png" alt="Hustle Baseball mascot — player at bat" width="920" height="748">
     </div>
   </div>
   <div class="stats">
     <div class="stats-in">
       <div class="stat"><b>2</b><span>Travel Teams</span></div>
-      <div class="stat"><b>11U/12U</b><span>2026 Divisions</span></div>
+      <div class="stat"><b>{{ t.divisions | join: "/" }}</b><span>{{ t.season | split: " " | last }} Divisions</span></div>
       <div class="stat"><b>2024</b><span>Established</span></div>
-      <div class="stat"><b>5</b><span>Local Sponsors</span></div>
+      <div class="stat"><b>501(c)(3)</b><span>Nonprofit</span></div>
     </div>
   </div>
 </section>
@@ -660,69 +74,21 @@ footer.site a:hover{color:var(--pink)}
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Now Recruiting</p>
-      <h2 class="sec"><span class="brush">Tryouts</span> Summer/Fall 2026</h2>
+      <h2 class="sec"><span class="brush">Tryouts</span> {{ t.season }}</h2>
     </div>
-    <div class="tryout-grid">
-      <div class="tryout-card cham frame">
-        <div class="inner cham">
-          <div class="ages">
-            <div class="age"><b>11U</b><span>Division</span></div>
-            <div class="age"><b>12U</b><span>Division</span></div>
-          </div>
-
-          <div class="info-row">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></div>
-            <div><div class="lbl">Date</div><div class="val">June 10, 2026</div></div>
-          </div>
-          <div class="info-row">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-            <div><div class="lbl">Time</div><div class="val">5:30 PM – 7:30 PM</div></div>
-          </div>
-          <div class="info-row">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12A7 7 0 1 0 5 10c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-            <div><div class="lbl">Location</div><div class="val">Paradise Park Softball Field
-              <small>365 La Crosse Dr, Morgan Hill, CA 95037</small></div></div>
-          </div>
-
-          <div class="reg-box">
-            <div class="lbl">Register</div>
-            <a href="mailto:tryouts@hustlebaseballgilroy.org">tryouts@hustlebaseballgilroy.org</a>
-          </div>
-          <div class="t-actions">
-            <a class="btn btn-pink btn-sm" href="mailto:tryouts@hustlebaseballgilroy.org?subject=Tryout%20registration">Register</a>
-            <a class="btn btn-ghost btn-sm" id="ics" href="#" download="hustle-tryouts.ics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Add to Calendar</a>
-            <a class="btn btn-ghost btn-sm" href="https://maps.google.com/?q=365+La+Crosse+Dr,+Morgan+Hill,+CA+95037" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="side-stack">
-        <div class="equip cham">
-          <h4>Equipment Required</h4>
-          <ul><li>Bat</li><li>Helmet</li><li>Glove</li><li>Cleats</li></ul>
-        </div>
-        <div class="finder cham">
-          <h4>Which <span class="brush">division?</span></h4>
-          <p class="small"><b style="color:var(--blue)">11U</b>: born on/after May 1, 2015 &nbsp;·&nbsp; <b style="color:var(--pink)">12U</b>: born on/after May 1, 2014</p>
-          <label for="dob">Player's birth date</label>
-          <input type="date" id="dob" min="2010-01-01" max="2020-12-31">
-          <div class="f-res" id="fres" aria-live="polite"><b>?</b><span>Enter a birth date to check eligibility.</span></div>
-        </div>
-        <div class="flyer-shot cham">
-          <img src="images/summer-fall-2026-tryouts.webp" alt="Hustle Baseball 2026 tryouts flyer">
-        </div>
-      </div>
-    </div>
+    {% include tryouts.html %}
   </div>
 </section>
 
 <!-- about -->
 <section class="band" id="about">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Who We Are</p>
-      <h2 class="sec">More Than <span class="brush">a Team</span></h2>
-      <p class="lede" style="margin-top:16px">Established in 2024, Hustle Baseball is a competitive youth travel baseball organization based in Gilroy, California — a pathway for youth baseball development beyond traditional little league programs.</p>
+    <div class="sec-row">
+      <div class="sec-head">
+        <p class="eyebrow">Who We Are</p>
+        <h2 class="sec">More Than <span class="brush">a Team</span></h2>
+        <p class="lede" style="margin-top:16px">Established in 2024, Hustle Baseball is a competitive youth travel baseball organization based in Gilroy, California — a pathway for youth baseball development beyond traditional little league programs.</p>
+      </div>
     </div>
     <div class="vmp">
       <div class="vmp-card cham"><div class="inner cham">
@@ -738,6 +104,7 @@ footer.site a:hover{color:var(--pink)}
         <p>To empower young athletes through the game of baseball, teaching the values of sportsmanship, growth, and hustle while developing character and a lifelong passion for the sport.</p>
       </div></div>
     </div>
+    <a class="more-link" href="/about.html">More about Hustle →</a>
   </div>
 </section>
 
@@ -750,7 +117,7 @@ footer.site a:hover{color:var(--pink)}
     </div>
     <div class="team-grid">
       <div class="team a cham">
-        <img src="photos/10U/DSC_0804.JPG" alt="Hustle Baseball player in the field">
+        <img src="/photos/10U/DSC_0804.JPG" alt="Hustle Baseball player in the field" loading="lazy">
         <div class="tint"></div>
         <div class="body">
           <span class="tag">Ages 10–11</span>
@@ -760,7 +127,7 @@ footer.site a:hover{color:var(--pink)}
         </div>
       </div>
       <div class="team b cham">
-        <img src="photos/10U/DSC_0001.webp" alt="Hustle Baseball catcher behind the plate">
+        <img src="/photos/10U/DSC_0001.webp" alt="Hustle Baseball catcher behind the plate" loading="lazy">
         <div class="tint"></div>
         <div class="body">
           <span class="tag">Ages 11–12</span>
@@ -770,75 +137,7 @@ footer.site a:hover{color:var(--pink)}
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- coaches -->
-<section class="band" id="coaches">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Coaching Staff</p>
-      <h2 class="sec">The <span class="brush">Coaches</span></h2>
-      <p class="lede" style="margin-top:14px">Tap a card to flip it.</p>
-    </div>
-    <div class="coach-wrap">
-      <div class="coach-group">
-        <h3 style="color:var(--blue)">11U Staff</h3>
-        <div class="coach-grid flips">
-          <button class="fcoach t11" aria-pressed="false" aria-label="Nic Amanno, 11U Head Coach. Flip for bio">
-            <div class="in">
-              <div class="fa"><div class="ht"></div><div class="ini">NA</div><div class="nm"><b>Nic Amanno</b><span>11U · Head Coach</span></div><span class="hint">Flip ↻</span></div>
-              <div class="ba"><div class="bi"><div class="q">Coach Nic</div><p>Former All-American relief pitcher. Advocates a “building block” approach, positive self-talk, and a genuine love for the game.</p><div class="who">11U · Head Coach</div></div></div>
-            </div>
-          </button>
-          <button class="fcoach t11" aria-pressed="false" aria-label="Dan Stilts, 11U Coach. Flip for bio">
-            <div class="in">
-              <div class="fa"><div class="ht"></div><div class="ini">DS</div><div class="nm"><b>Dan Stilts</b><span>11U · Coach</span></div><span class="hint">Flip ↻</span></div>
-              <div class="ba"><div class="bi"><div class="q">Coach Dan</div><p>Prioritizes being a positive role model — teaching confidence and resilience, because sportsmanship matters as much as the score.</p><div class="who">11U · Coach</div></div></div>
-            </div>
-          </button>
-          <button class="fcoach t11" aria-pressed="false" aria-label="Brandon Einhorn, 11U Coach. Flip for bio">
-            <div class="in">
-              <div class="fa"><div class="ht"></div><div class="ini">BE</div><div class="nm"><b>Brandon Einhorn</b><span>11U · Coach</span></div><span class="hint">Flip ↻</span></div>
-              <div class="ba"><div class="bi"><div class="q">Coach Brandon</div><p>Committed to teaching fundamentals and teamwork while making sure every player feels included.</p><div class="who">11U · Coach</div></div></div>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div class="coach-group">
-        <h3 style="color:var(--pink)">12U Staff</h3>
-        <div class="coach-grid flips">
-          <button class="fcoach t12" aria-pressed="false" aria-label="Mike Harris, 12U Head Coach. Flip for bio">
-            <div class="in">
-              <div class="fa"><div class="ht"></div><div class="ini">MH</div><div class="nm"><b>Mike Harris</b><span>12U · Head Coach</span></div><span class="hint">Flip ↻</span></div>
-              <div class="ba"><div class="bi"><div class="q">Coach Mike</div><p>Emphasizes proper mechanics and fundamentals while creating a supportive learning environment and fostering accountability.</p><div class="who">12U · Head Coach</div></div></div>
-            </div>
-          </button>
-          <button class="fcoach t12" aria-pressed="false" aria-label="Scott De Lara, 12U Coach. Flip for bio">
-            <div class="in">
-              <div class="fa"><div class="ht"></div><div class="ini">SD</div><div class="nm"><b>Scott De Lara</b><span>12U · Coach</span></div><span class="hint">Flip ↻</span></div>
-              <div class="ba"><div class="bi"><div class="q">Coach Scott</div><p>Dedicated to player development with extensive experience, concentrating on fundamentals and teamwork.</p><div class="who">12U · Coach</div></div></div>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- board -->
-<section class="band" id="board">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Leadership</p>
-      <h2 class="sec">Executive <span class="brush">Board</span></h2>
-    </div>
-    <div class="board-grid">
-      <div class="bm cham"><span>President</span><b>Michael Harris</b></div>
-      <div class="bm cham"><span>Secretary</span><b>Jen Einhorn</b></div>
-      <div class="bm cham"><span>Information Officer</span><b>Dan Stilts</b></div>
-      <div class="bm cham"><span>Social Media</span><b>Lisa Barrera</b></div>
-    </div>
+    <a class="more-link" href="/about.html#coaches">Meet the coaches →</a>
   </div>
 </section>
 
@@ -849,30 +148,15 @@ footer.site a:hover{color:var(--pink)}
       <p class="eyebrow">Thank You</p>
       <h2 class="sec">Our <span class="brush">Sponsors</span></h2>
     </div>
-
-    <div class="tier">
-      <div class="tier-h"><b>Platinum</b><span class="chip plat">Tier 1</span><span class="rule"></span></div>
-      <div class="sp-grid">
-        <a class="sp cham" href="https://www.antrimdds.com/" target="_blank" rel="noopener"><img src="images/sponsors/drantrim.webp" alt="Kinberly Antrim, DDS"><b>Kinberly Antrim, DDS</b></a>
-        <a class="sp cham" href="https://bhandalbros.com/" target="_blank" rel="noopener"><img src="images/sponsors/bhandal.webp" alt="Bhandal Bros Inc."><b>Bhandal Bros Inc.</b></a>
-      </div>
+    <div class="sp-grid">
+      <a class="sp cham" href="https://www.antrimdds.com/" target="_blank" rel="noopener"><img src="/images/sponsors/drantrim.webp" alt="" loading="lazy"><b>Kinberly Antrim, DDS</b></a>
+      <a class="sp cham" href="https://bhandalbros.com/" target="_blank" rel="noopener"><img src="/images/sponsors/bhandal.webp" alt="" loading="lazy"><b>Bhandal Bros Inc.</b></a>
+      <a class="sp cham" href="https://www.capitolhonda.com/" target="_blank" rel="noopener"><img src="/images/sponsors/capitol-honda.webp" alt="" loading="lazy"><b>Capitol Honda</b></a>
+      <a class="sp cham" href="https://primeairco.com/" target="_blank" rel="noopener"><img src="/images/sponsors/prime-air.webp" alt="" loading="lazy"><b>Prime Air</b></a>
+      <a class="sp cham" href="https://fcma.biz/" target="_blank" rel="noopener"><img src="/images/sponsors/full-circle.webp" alt="" loading="lazy"><b>Full Circle Martial Arts</b></a>
+      <a class="sp cham join" href="/sponsors.html#become"><b>Become a Sponsor</b><span>Support local youth baseball</span></a>
     </div>
-
-    <div class="tier">
-      <div class="tier-h"><b>Gold</b><span class="chip gold">Tier 2</span><span class="rule"></span></div>
-      <div class="sp-grid">
-        <a class="sp cham" href="https://www.capitolhonda.com/" target="_blank" rel="noopener"><img src="images/sponsors/capitol-honda.webp" alt="Capitol Honda"><b>Capitol Honda</b></a>
-        <a class="sp cham" href="https://primeairco.com/" target="_blank" rel="noopener"><img src="images/sponsors/prime-air.webp" alt="Prime Air"><b>Prime Air</b></a>
-      </div>
-    </div>
-
-    <div class="tier" style="margin-bottom:0">
-      <div class="tier-h"><b>Silver</b><span class="chip silv">Tier 3</span><span class="rule"></span></div>
-      <div class="sp-grid">
-        <a class="sp cham" href="https://fcma.biz/" target="_blank" rel="noopener"><img src="images/sponsors/full-circle.webp" alt="Full Circle Martial Arts"><b>Full Circle Martial Arts</b></a>
-        <a class="sp cham join" href="#join"><b>Become a Sponsor</b><span>Support local youth baseball</span></a>
-      </div>
-    </div>
+    <a class="more-link" href="/sponsors.html">All sponsors &amp; levels →</a>
   </div>
 </section>
 
@@ -884,15 +168,16 @@ footer.site a:hover{color:var(--pink)}
       <h2 class="sec">Photo <span class="brush">Gallery</span></h2>
     </div>
     <div class="gal">
-      <a href="#"><img src="photos/11U/DSC_0415.webp" alt="Players at the plate"></a>
-      <a href="#"><img src="photos/10U/DSC_0656.webp" alt="Outfielder chasing a ball"></a>
-      <a href="#"><img src="photos/10U/DSC_0001.webp" alt="Catcher at home plate"></a>
-      <a href="#"><img src="photos/10U/DSC_0804.JPG" alt="Infielder ready"></a>
-      <a href="#"><img src="photos/10U/DSC_0676.JPG" alt="Game action"></a>
-      <a href="#"><img src="photos/10U/DSC_0128.webp" alt="Game action"></a>
-      <a href="#"><img src="photos/SJGiants/DSC_0217.webp" alt="Game action"></a>
-      <a href="#"><img src="photos/SJGiants/DSC_0207.webp" alt="Game action"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/11U/DSC_0415.webp" alt="Players at the plate" loading="lazy"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/10U/DSC_0656.webp" alt="Outfielder chasing a ball" loading="lazy"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/10U/DSC_0001.webp" alt="Catcher at home plate" loading="lazy"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/10U/DSC_0804.JPG" alt="Infielder ready" loading="lazy"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/10U/DSC_0676.JPG" alt="Game action" loading="lazy"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/10U/DSC_0128.webp" alt="Game action" loading="lazy"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/SJGiants/DSC_0217.webp" alt="Game action" loading="lazy"></a>
+      <a class="cham" href="/gallery.html"><img src="/photos/SJGiants/DSC_0207.webp" alt="Game action" loading="lazy"></a>
     </div>
+    <a class="more-link" href="/gallery.html">View the full gallery →</a>
   </div>
 </section>
 
@@ -902,15 +187,15 @@ footer.site a:hover{color:var(--pink)}
     <div class="sec-head" style="margin:0">
       <p class="eyebrow">For Parents</p>
       <h2 class="sec">Got <span class="brush">Questions?</span></h2>
-      <p class="lede" style="margin-top:16px">The things families ask us most. Don't see yours? Email <a href="mailto:info@hustlebaseballgilroy.org" style="color:var(--blue-l)">info@hustlebaseballgilroy.org</a>.</p>
+      <p class="lede" style="margin-top:16px">The things families ask us most. Don't see yours? Email <a href="mailto:info@hustlebaseballgilroy.org" class="link">info@hustlebaseballgilroy.org</a>.</p>
     </div>
     <div class="faq-list">
-      <details class="cham" open><summary>How do I register for tryouts?</summary><p>Registration is required. Email <a href="mailto:tryouts@hustlebaseballgilroy.org">tryouts@hustlebaseballgilroy.org</a> with your child's name and the age level they're trying out for, or use the online sign-up form.</p></details>
-      <details class="cham"><summary>Which division should my child try out for?</summary><p>11U is for players born on or after May 1, 2015. 12U is for players born on or after May 1, 2014. The division checker in the tryouts section will tell you instantly.</p></details>
-      <details class="cham"><summary>What does my player need to bring?</summary><p>A bat, helmet, glove, and cleats are all required.</p></details>
-      <details class="cham"><summary>Where are tryouts held?</summary><p>Paradise Park softball field, 365 La Crosse Dr, Morgan Hill, CA 95037.</p></details>
+      <details class="cham" open><summary>How do I register for tryouts?</summary><p>Registration is required. Fill out the <a href="/signup.html#register">online registration form</a>, or email <a href="mailto:{{ t.email }}">{{ t.email }}</a> with your child's name and the age level they're trying out for.</p></details>
+      <details class="cham"><summary>Which division should my child try out for?</summary><p>{% for c in t.cutoffs %}{{ c.division }} is for players born on or after {{ c.label }}. {% endfor %}The division checker in the tryouts section will tell you instantly.</p></details>
+      <details class="cham"><summary>What does my player need to bring?</summary><p>Required gear: {{ t.equipment | join: ", " | downcase }}.</p></details>
+      <details class="cham"><summary>Where are tryouts held?</summary><p>{{ t.venue }}, {{ t.address }}. Check <a href="#news">Latest News</a> for upcoming dates.</p></details>
       <details class="cham"><summary>How is travel ball different from little league?</summary><p>Hustle teams compete in regional tournaments. The program is a development pathway beyond traditional little league, built around fundamentals, sportsmanship, and hustle.</p></details>
-      <details class="cham"><summary>How can my business sponsor the team?</summary><p>Sponsorships help cover uniforms, tournament fees, and equipment. Email <a href="mailto:info@hustlebaseballgilroy.org">info@hustlebaseballgilroy.org</a> to talk about Platinum, Gold, and Silver tiers.</p></details>
+      <details class="cham"><summary>How can my business sponsor the team?</summary><p>Sponsorships help cover uniforms, tournament fees, and equipment. See the <a href="/sponsors.html#become">sponsorship levels</a> or email <a href="mailto:info@hustlebaseballgilroy.org">info@hustlebaseballgilroy.org</a>.</p></details>
     </div>
   </div>
 </section>
@@ -920,148 +205,13 @@ footer.site a:hover{color:var(--pink)}
   <div class="halftone"></div>
   <div class="wrap in">
     <h2>Ready to <span style="font-family:'Kaushan Script',cursive;text-transform:none">hustle?</span></h2>
-    <p>Tryouts for the Summer/Fall 2026 season are open to 11U and 12U players. Reach out and our coaching staff will follow up with next steps.</p>
+    <p>We're building {{ t.divisions | join: " and " }} rosters of players who love the game. Register your interest and our coaching staff will follow up with next steps.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn-dark" href="mailto:tryouts@hustlebaseballgilroy.org">Email Tryouts</a>
-      <a class="btn btn-ghost" style="box-shadow:inset 0 0 0 2px #fff" href="mailto:info@hustlebaseballgilroy.org">General Info</a>
+      <a class="btn btn-dark" href="/signup.html">Register Online</a>
+      <a class="btn btn-ghost" style="box-shadow:inset 0 0 0 2px #fff" href="/contact.html">Contact Us</a>
     </div>
   </div>
 </section>
 
-<!-- footer -->
-<footer class="site">
-  <div class="wrap">
-    <div class="f-grid">
-      <div>
-        <a class="brand" href="#top" style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-          <img src="images/redesign/mascot-splatter.png" alt="Hustle Baseball mascot logo">
-          <span class="txt" style="font-family:Anton,sans-serif;font-size:1.3rem;line-height:.9;text-transform:uppercase">Hustle<br>Baseball</span>
-        </a>
-        <p style="color:var(--mist);font-size:.92rem;max-width:34ch;margin:0">Competitive youth travel baseball in Gilroy, California. Established 2024.</p>
-      </div>
-      <div>
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#teams">Teams</a></li>
-          <li><a href="#coaches">Coaches</a></li>
-          <li><a href="#sponsors">Sponsors</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Connect</h5>
-        <ul>
-          <li><a href="mailto:info@hustlebaseballgilroy.org">info@hustlebaseballgilroy.org</a></li>
-          <li><a href="mailto:tryouts@hustlebaseballgilroy.org">tryouts@hustlebaseballgilroy.org</a></li>
-          <li><a href="#tryouts">2026 Tryouts</a></li>
-          <li><a href="#join">Become a Sponsor</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="f-bot">
-      <span>© 2026 Hustle Baseball Gilroy. All rights reserved.</span>
-      <span>Tax ID: 30-1433334</span>
-    </div>
-  </div>
-</footer>
-
-<div class="mobile-bar">
-  <a class="btn btn-pink" href="mailto:tryouts@hustlebaseballgilroy.org">Register</a>
-  <a class="btn btn-ghost" href="#tryouts">Tryout Info</a>
-</div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
-<script>
-// ---------- announcements ----------
-(function(){
-  const ON_SITE=/hustlebaseballgilroy\.org$/.test(location.hostname);
-  const BASE=ON_SITE?location.origin+'/':'https://hustlebaseballgilroy.org/';
-  const OLDER_SHOWN=3;
-  const root=document.getElementById('newsRoot');
-
-  // Split the markdown into posts on "## " headings; pull the "Posted on" line out as a date.
-  function parse(md){
-    return md.split(/^## /m).slice(1).map(chunk=>{
-      const nl=chunk.indexOf('\n');
-      const title=chunk.slice(0,nl).trim();
-      let body=chunk.slice(nl+1).replace(/^-{3,}\s*$/gm,'');
-      let date='';
-      body=body.replace(/^#{3,6}\s*\*?Posted on ([^*\n]+)\*?\s*$/m,(_,d)=>{date=d.trim();return ''});
-      return {title,date,body:body.trim()};
-    }).filter(p=>p.title);
-  }
-  function html(md){
-    const el=document.createElement('div');el.className='n-body';el.innerHTML=marked.parse(md);
-    el.querySelectorAll('a[href],img[src]').forEach(n=>{
-      const attr=n.tagName==='A'?'href':'src',v=n.getAttribute(attr);
-      if(!/^(https?:|mailto:|tel:|#|data:)/i.test(v)) n.setAttribute(attr,new URL(v.replace(/^\//,''),BASE).href);
-      if(n.tagName==='A'&&/^https?:/.test(n.href)&&!n.href.startsWith(BASE)){n.target='_blank';n.rel='noopener'}
-    });
-    return el;
-  }
-  const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const firstPara=md=>{const p=md.split(/\n\s*\n/).find(b=>b.trim()&&!/^\s*[<*-]/.test(b))||'';return p.replace(/\*\*|\[([^\]]+)\]\([^)]+\)/g,(m,t)=>t||'').trim()};
-
-  function render(posts){
-    if(!posts.length){root.innerHTML='<p class="news-err">No announcements right now.</p>';return}
-    root.innerHTML='';
-    const [top,...rest]=posts;
-    const body=html(top.body),img=body.querySelector('img');
-    const feat=document.createElement('article');
-    feat.className='news-feature cham'+(img?'':' noart');
-    feat.innerHTML=`<div class="inner cham"><div class="txt"><div class="n-meta"><span class="n-new">Latest</span>${top.date?`<span class="n-date">Posted ${esc(top.date)}</span>`:''}</div><h3>${esc(top.title)}</h3></div><div class="art"></div></div>`;
-    feat.querySelector('.txt').appendChild(body);
-    if(img){const a=feat.querySelector('.art'),i=new Image();a.style.setProperty('--bg',`url("${img.src}")`);i.src=img.src;i.alt=img.alt||'';i.loading='lazy';a.appendChild(i)}
-    root.appendChild(feat);
-    if(!rest.length)return;
-    const grid=document.createElement('div');grid.className='news-older';
-    rest.forEach((p,k)=>{
-      const d=document.createElement('details');d.className='n-card cham';if(k>=OLDER_SHOWN)d.hidden=true;
-      d.innerHTML=`<summary>${p.date?`<div class="n-meta"><span class="n-date">${esc(p.date)}</span></div>`:''}<h4>${esc(p.title)}</h4><p class="ex">${esc(firstPara(p.body))}</p><span class="more">Read more</span></summary>`;
-      d.appendChild(html(p.body));
-      grid.appendChild(d);
-    });
-    root.appendChild(grid);
-    if(rest.length>OLDER_SHOWN){
-      const w=document.createElement('div');w.className='news-more';
-      w.innerHTML=`<button class="btn btn-ghost btn-sm">Show all ${posts.length} announcements</button>`;
-      w.firstChild.onclick=()=>{grid.querySelectorAll('[hidden]').forEach(n=>n.hidden=false);w.remove()};
-      root.appendChild(w);
-    }
-  }
-    if(typeof marked==='undefined'){root.innerHTML='<p class="news-err">Unable to load announcements.</p>';return}
-  fetch('announcements.md',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.text()})
-    .then(md=>render(parse(md)))
-    .catch(()=>{root.innerHTML='<p class="news-err">Unable to load announcements.</p>'});
-})();
-
-// mobile menu
-const burger=document.querySelector('.burger'),nav=document.getElementById('mainnav');
-burger.addEventListener('click',()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.textContent=o?'Close':'Menu'});
-nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.textContent='Menu'}});
-
-// flip cards
-document.querySelectorAll('.fcoach').forEach(b=>b.addEventListener('click',()=>b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true')));
-
-// add to calendar (.ics)
-const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Hustle Baseball//Tryouts//EN','BEGIN:VEVENT','UID:hb-tryouts-20260610@hustlebaseballgilroy.org',
-'DTSTAMP:20260601T000000Z','DTSTART;TZID=America/Los_Angeles:20260610T173000','DTEND;TZID=America/Los_Angeles:20260610T193000',
-'SUMMARY:Hustle Baseball Tryouts (11U & 12U)','LOCATION:Paradise Park Softball Field\\, 365 La Crosse Dr\\, Morgan Hill\\, CA 95037',
-'DESCRIPTION:Bring bat\\, helmet\\, glove\\, cleats. Register: tryouts@hustlebaseballgilroy.org','END:VEVENT','END:VCALENDAR'].join('\r\n');
-document.getElementById('ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
-
-// division finder
-const fres=document.getElementById('fres');
-document.getElementById('dob').addEventListener('input',e=>{
-  const v=e.target.value;if(!v)return;
-  const d=new Date(v+'T12:00:00');
-  let c='',t='—',m='Older than both 2026 cutoffs. Email info@hustlebaseballgilroy.org and we can point you in the right direction.';
-  if(d>=new Date('2015-05-01T00:00:00')){c='u11';t='11U';m='Eligible for 11U (born on or after May 1, 2015).'}
-  else if(d>=new Date('2014-05-01T00:00:00')){c='u12';t='12U';m='Eligible for 12U (born on or after May 1, 2014).'}
-  fres.className='f-res '+c;fres.innerHTML='<b>'+t+'</b><span>'+m+'</span>';
-});
-</script>
-</body>
-</html>
+<script src="/js/news.js"></script>

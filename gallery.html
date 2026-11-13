@@ -1,97 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Baseball Photo Gallery - Hustle Baseball Gilroy | Travel Baseball Team Photos
+description: Photos of Hustle Baseball players in action — games, tournaments and team moments from our Gilroy youth travel baseball teams.
+---
+<section class="page-hero">
+  <div class="streak a"></div><div class="streak b"></div><div class="dots"></div>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> / Gallery</p>
+    <h1>Photo <span class="brush">Gallery</span></h1>
+    <p class="lede">Game days, tournaments and team moments. Tap any photo to see it full size.</p>
+  </div>
+</section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseball Photo Gallery - Hustle Baseball Gilroy | Travel Baseball Team Photos</title>
-    <meta name="description"
-        content="View photos of Hustle Baseball team in action. See our youth travel baseball team from Gilroy, California in games, practices, and tournaments.">
-    <meta name="keywords"
-        content="baseball photos, gilroy baseball gallery, travel baseball pictures, youth baseball photos, baseball team images, gilroy travel baseball photos, baseball action shots">
-    <meta name="author" content="Hustle Baseball">
-    <meta name="robots" content="index, follow">
+<section class="band" style="padding-top:clamp(34px,5vw,56px)">
+  <div class="wrap">
+    <div class="chips" id="albums" role="group" aria-label="Choose an album"></div>
+    <div class="gal big" id="gallery"><p class="news-err">Loading photos…</p></div>
+    <div class="gal-more" id="galMore" hidden><button class="btn btn-ghost btn-sm" type="button">Load more photos</button></div>
+  </div>
+</section>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hustlebaseballgilroy.org/gallery.html">
-    <meta property="og:title" content="Baseball Photo Gallery - Hustle Baseball Gilroy">
-    <meta property="og:description"
-        content="View photos of Hustle Baseball team in action. See our youth travel baseball team from Gilroy, California.">
-    <meta property="og:image" content="https://hustlebaseballgilroy.org/logo3.png">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <img id="lbImg" alt="">
+  <button class="lb-x" type="button" aria-label="Close">&times;</button>
+  <button class="lb-prev" type="button" aria-label="Previous photo">&#10094;</button>
+  <button class="lb-next" type="button" aria-label="Next photo">&#10095;</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hustlebaseballgilroy.org/gallery.html">
-    <meta property="twitter:title" content="Baseball Photo Gallery - Hustle Baseball Gilroy">
-    <meta property="twitter:description"
-        content="View photos of Hustle Baseball team in action. See our youth travel baseball team from Gilroy, California.">
-    <meta property="twitter:image" content="https://hustlebaseballgilroy.org/logo3.png">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://hustlebaseballgilroy.org/gallery.html">
-
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SportsOrganization",
-      "name": "Hustle Baseball",
-      "description": "Competitive youth travel baseball organization in Gilroy, California",
-      "url": "https://hustlebaseballgilroy.org/gallery.html",
-      "logo": "https://hustlebaseballgilroy.org/logo3.png",
-      "sport": "Baseball",
-      "areaServed": {
-        "@type": "City",
-        "name": "Gilroy"
-      }
-    }
-    </script>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EK72WWNR3Z"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-EK72WWNR3Z');
-</script>
-
-<body>
-    <div id="header"></div>
-
-    <div class="main-content-wrapper">
-        <img src="logo.webp" alt="" class="background-logo" width="420" height="423">
-        <section class="container">
-            <h2>Photo Gallery</h2>
-            <div class="gallery-filter-container">
-                <label for="team-filter">Select Album:</label>
-                <select id="team-filter">
-                    <option value="all">All Photos</option>
-                    <option value="10u">10U</option>
-                    <option value="11u">11U</option>
-                    <option value="sjgiants">SJ Giants</option>
-                </select>
-            </div>
-            <div class="gallery-grid" id="gallery"></div>
-            <div class="pagination" id="pagination"></div>
-        </section>
-    </div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="close-btn">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-    </div>
-
-    <div id="footer"></div>
-
-    <script src="js/script.js"></script>
-    <script src="js/gallery.js"></script>
-</body>
-
-</html>
+<script src="/js/gallery.js"></script>
