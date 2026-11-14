@@ -1,203 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Baseball Schedule - Hustle Baseball Gilroy | Travel Baseball Games & Tournaments
+keywords: "baseball schedule, gilroy baseball schedule, travel baseball games, baseball tournaments, youth baseball schedule, gilroy travel baseball, baseball practices, game times"
+og_title: "Baseball Schedule - Hustle Baseball Gilroy"
+description: "View Hustle Baseball's current schedule of games, practices, and tournaments. Stay updated on our Gilroy travel baseball team's upcoming events and game times."
+---
+<section class="page-hero">
+  <div class="streak a"></div><div class="streak b"></div><div class="dots"></div>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> / Schedule</p>
+    <h1>Team <span class="brush">Schedule</span></h1>
+    <p class="lede">Games, practices and tournaments for both teams, kept in sync with GameChanger. Tap any event for details, or subscribe so it shows up in your phone's calendar.</p>
+  </div>
+</section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseball Schedule - Hustle Baseball Gilroy | Travel Baseball Games & Tournaments</title>
-    <meta name="description"
-        content="View Hustle Baseball's current schedule of games, practices, and tournaments. Stay updated on our Gilroy travel baseball team's upcoming events and game times.">
-    <meta name="keywords"
-        content="baseball schedule, gilroy baseball schedule, travel baseball games, baseball tournaments, youth baseball schedule, gilroy travel baseball, baseball practices, game times">
-    <meta name="author" content="Hustle Baseball">
-    <meta name="robots" content="index, follow">
+<section class="band" style="padding-top:clamp(34px,5vw,56px)">
+  <div class="wrap">
+    <div class="sched-bar">
+      <div class="seg" role="group" aria-label="Filter by team">
+        <button type="button" data-team="all" aria-pressed="true">All Teams</button>
+        <button type="button" data-team="11u" aria-pressed="false">11U</button>
+        <button type="button" data-team="12u" aria-pressed="false">12U</button>
+      </div>
+      <div class="legend"><span><i style="background:var(--blue)"></i>11U</span><span><i style="background:var(--pink)"></i>12U</span></div>
+    </div>
+    <div class="cal-shell cham"><div id="calendar"></div></div>
+    <div class="cal-empty" id="calEmpty">Nothing is on the calendar for this view yet. New games and practices show up here automatically once they're added in GameChanger — check back soon, or see <a class="link" href="/#news">Latest News</a>.</div>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hustlebaseballgilroy.org/schedule.html">
-    <meta property="og:title" content="Baseball Schedule - Hustle Baseball Gilroy">
-    <meta property="og:description"
-        content="View Hustle Baseball's current schedule of games, practices, and tournaments.">
-    <meta property="og:image" content="https://hustlebaseballgilroy.org/logo3.png">
+    <div class="card cham" style="margin-top:26px">
+      <h3>Add the schedule to your phone</h3>
+      <p style="color:var(--mist);margin:0">Subscribe once and new games appear in your calendar app automatically.</p>
+      <div class="sub-links">
+        <a class="btn btn-ghost btn-sm" data-sub="hustle-10u.ics" href="/hustle-10u.ics">Subscribe · 11U</a>
+        <a class="btn btn-ghost btn-sm" data-sub="hustle-11u.ics" href="/hustle-11u.ics">Subscribe · 12U</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hustlebaseballgilroy.org/schedule.html">
-    <meta property="twitter:title" content="Baseball Schedule - Hustle Baseball Gilroy">
-    <meta property="twitter:description"
-        content="View Hustle Baseball's current schedule of games, practices, and tournaments.">
-    <meta property="twitter:image" content="https://hustlebaseballgilroy.org/logo3.png">
+<div class="ev-pop" id="evPop" role="dialog" aria-modal="true" aria-labelledby="evTitle">
+  <div class="box cham"><div class="cham">
+    <button class="x" type="button" aria-label="Close">&times;</button>
+    <h3 id="evTitle"></h3>
+    <p><span class="lbl">When</span><span id="evWhen"></span></p>
+    <p><span class="lbl">Where</span><span id="evWhere"></span></p>
+    <p id="evDescWrap"><span class="lbl">Details</span><span id="evDesc"></span></p>
+  </div></div>
+</div>
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://hustlebaseballgilroy.org/schedule.html">
-
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.15/main.css' rel='stylesheet' />
-    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.15/main.css' rel='stylesheet' />
-    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.15/main.css' rel='stylesheet' />
-    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.15/main.css' rel='stylesheet' />
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SportsOrganization",
-      "name": "Hustle Baseball",
-      "description": "Competitive youth travel baseball organization in Gilroy, California",
-      "url": "https://hustlebaseballgilroy.org/schedule.html",
-      "logo": "https://hustlebaseballgilroy.org/logo3.png",
-      "sport": "Baseball",
-      "areaServed": {
-        "@type": "City",
-        "name": "Gilroy"
-      }
-    }
-    </script>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EK72WWNR3Z"></script>
+<script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.15/index.global.min.js"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+(function () {
+  // The GameChanger feeds still use last season's file names: the team that was
+  // 10U is now 11U, and the team that was 11U is now 12U.
+  var FEEDS = {
+    '11u': { url: '/hustle-10u.ics', color: '#2b9bf5' },
+    '12u': { url: '/hustle-11u.ics', color: '#ff1478' }
+  };
+  var el = document.getElementById('calendar'), empty = document.getElementById('calEmpty');
+  var narrow = window.matchMedia('(max-width: 640px)').matches;
 
-    gtag('config', 'G-EK72WWNR3Z');
+  // webcal:// links open the "subscribe" prompt in phone calendar apps.
+  document.querySelectorAll('[data-sub]').forEach(function (a) {
+    a.href = 'webcal://' + location.host + '/' + a.getAttribute('data-sub');
+  });
+
+  function sources(team) {
+    return Object.keys(FEEDS).filter(function (k) { return team === 'all' || k === team; })
+      .map(function (k) { return { id: k, url: FEEDS[k].url, format: 'ics', color: FEEDS[k].color }; });
+  }
+
+  var cal = new FullCalendar.Calendar(el, {
+    initialView: narrow ? 'listMonth' : 'dayGridMonth',
+    headerToolbar: narrow
+      ? { left: 'prev,next', center: 'title', right: 'today' }
+      : { left: 'prev,next today', center: 'title', right: 'dayGridMonth,timeGridWeek,listMonth' },
+    buttonText: { today: 'Today', month: 'Month', week: 'Week', list: 'List' },
+    height: 'auto',
+    eventTimeFormat: { hour: 'numeric', minute: '2-digit', meridiem: 'short' },
+    displayEventEnd: true,
+    noEventsText: 'No events this month',
+    eventSources: sources('all'),
+    eventsSet: function (evs) { empty.classList.toggle('show', evs.length === 0); },
+    eventSourceFailure: function () { empty.textContent = 'The schedule could not be loaded right now. Please try again later.'; empty.classList.add('show'); },
+    eventClick: function (info) {
+      info.jsEvent.preventDefault();
+      var e = info.event, opts = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+      var when = e.start.toLocaleDateString('en-US', opts);
+      if (!e.allDay) {
+        var tf = { hour: 'numeric', minute: '2-digit' };
+        when += ' · ' + e.start.toLocaleTimeString('en-US', tf) + (e.end ? ' – ' + e.end.toLocaleTimeString('en-US', tf) : '');
+      }
+      document.getElementById('evTitle').textContent = e.title;
+      document.getElementById('evWhen').textContent = when;
+      document.getElementById('evWhere').textContent = e.extendedProps.location || 'Location to be announced';
+      var desc = e.extendedProps.description || '';
+      document.getElementById('evDesc').textContent = desc;
+      document.getElementById('evDescWrap').hidden = !desc;
+      pop.classList.add('show');
+      pop.querySelector('.x').focus();
+    }
+  });
+  cal.render();
+
+  document.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      cal.getEventSources().forEach(function (s) { s.remove(); });
+      sources(b.getAttribute('data-team')).forEach(function (s) { cal.addEventSource(s); });
+    });
+  });
+
+  var pop = document.getElementById('evPop');
+  var closePop = function () { pop.classList.remove('show'); };
+  pop.addEventListener('click', function (e) { if (e.target === pop || e.target.closest('.x')) closePop(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+})();
 </script>
-
-<body>
-    <div id="header"></div>
-
-    <div class="main-content-wrapper">
-        <img src="logo.webp" alt="" class="background-logo" width="420" height="423">
-        <section class="container">
-            <h2>Schedule</h2>
-            <div class="schedule-filter-container">
-                <label for="team-schedule-filter">Filter by Team:</label>
-                <select id="team-schedule-filter">
-                    <option value="all">All Teams</option>
-                    <option value="10u">Hustle Baseball 10U</option>
-                    <option value="11u">Hustle Baseball 11U</option>
-                </select>
-            </div>
-            <!-- <div class="schedule-message">
-                <p>Nothing scheduled at this time.</p>
-            </div> -->
-            <div id="calendar"></div>
-        </section>
-    </div>
-
-    <div class="event-popup" id="eventPopup">
-        <span class="event-popup-close" onclick="closeEventPopup()">&times;</span>
-        <h3 id="eventTitle"></h3>
-        <div class="datetime" id="eventDateTime"></div>
-        <div class="location" id="eventLocation"></div>
-        <div class="description" id="eventDescription"></div>
-    </div>
-
-    <div id="footer"></div>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.global.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.15/index.global.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.15/index.global.min.js'></script>
-    <script>
-        function closeEventPopup() {
-            document.getElementById('eventPopup').classList.remove('show');
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var calendarEl = document.getElementById('calendar');
-            var calendar;
-            var eventSources = {
-                'all': [
-                    { url: '/hustle-10u.ics', format: 'ics', id: '10u' },
-                    { url: '/hustle-11u.ics', format: 'ics', id: '11u' }
-                ],
-                '10u': [
-                    { url: '/hustle-10u.ics', format: 'ics', id: '10u' }
-                ],
-                '11u': [
-                    { url: '/hustle-11u.ics', format: 'ics', id: '11u' }
-                ]
-            };
-
-            function renderCalendar(team) {
-                if (calendar) {
-                    calendar.destroy();
-                }
-                calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialView: 'dayGridMonth',
-                    headerToolbar: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'dayGridMonth,timeGridWeek,listMonth'
-                    },
-                    eventTimeFormat: {
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        meridiem: 'short',
-                        omitZeroMinute: false
-                    },
-                    displayEventEnd: true,
-                    eventSources: eventSources[team],
-                    loading: function (isLoading) {
-                        console.log('Calendar is ', isLoading ? 'loading events...' : 'finished loading events');
-                    },
-                    eventDidMount: function (info) {
-                        console.log('Event mounted:', info.event.title);
-                    },
-                    eventSourceFailure: function (error) {
-                        console.error('Error fetching events:', error);
-                        alert('Failed to load calendar events. Please try again later.');
-                    },
-                    eventClick: function (info) {
-                        var popup = document.getElementById('eventPopup');
-                        document.getElementById('eventTitle').textContent = info.event.title;
-                        var dateTimeStr = info.event.start.toLocaleDateString('en-US', {
-                            weekday: 'long',
-                            month: 'long',
-                            day: 'numeric',
-                            year: 'numeric'
-                        });
-                        if (!info.event.allDay) {
-                            dateTimeStr += ' at ' + info.event.start.toLocaleTimeString('en-US', {
-                                hour: 'numeric',
-                                minute: '2-digit',
-                                hour12: true
-                            });
-                            if (info.event.end) {
-                                dateTimeStr += ' - ' + info.event.end.toLocaleTimeString('en-US', {
-                                    hour: 'numeric',
-                                    minute: '2-digit',
-                                    hour12: true
-                                });
-                            }
-                        }
-                        document.getElementById('eventDateTime').textContent = dateTimeStr;
-                        document.getElementById('eventLocation').textContent = info.event.extendedProps.location || 'Location not specified';
-                        document.getElementById('eventDescription').textContent = info.event.extendedProps.description || 'No description available';
-                        popup.classList.add('show');
-                        document.addEventListener('click', function closeOnClickOutside(e) {
-                            if (!popup.contains(e.target) && !e.target.closest('.fc-event')) {
-                                popup.classList.remove('show');
-                                document.removeEventListener('click', closeOnClickOutside);
-                            }
-                        });
-                    }
-                });
-                calendar.render();
-                console.log('Calendar initialized for', team);
-            }
-
-            // Initial render
-            renderCalendar('all');
-
-            // Filter change
-            document.getElementById('team-schedule-filter').addEventListener('change', function () {
-                renderCalendar(this.value);
-            });
-        });
-    </script>
-</body>
-
-</html>

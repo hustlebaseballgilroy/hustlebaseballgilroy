@@ -1,208 +1,81 @@
-document.addEventListener('DOMContentLoaded', function() {
-    let currentImageIndex = 0;
-    let images = [];
-    let imageData = [];
-    let filteredImages = [];
-    let currentPage = 1;
-    const imagesPerPage = 24; // 24 images per page (4x6 grid or 3x8 depending on screen)
+// Photo gallery: reads photos/image-index.json (built by scripts/generate_image_index.py).
+(function () {
+  var ALBUMS = { all: 'All Photos', '10u': '10U', '11u': '11U', sjgiants: 'SJ Giants' };
+  var PAGE = 24;
+  var grid = document.getElementById('gallery'), chips = document.getElementById('albums');
+  var more = document.getElementById('galMore'), lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg'), lbCount = document.getElementById('lbCount');
+  var all = [], list = [], shown = 0, cur = 0;
 
-    // Function to load images from the photos directory
-    async function loadImages() {
-        try {
-            const response = await fetch('photos/image-index.json');
-            const data = await response.json();
-            imageData = data.images;
-            images = imageData.map(img => img.path);
-            filteredImages = imageData;
-            displayImages();
-            displayPagination();
-        } catch (error) {
-            console.error('Error loading images:', error);
-        }
-    }
-
-    function displayImages() {
-        const gallery = document.getElementById('gallery');
-        gallery.innerHTML = '';
-
-        // Calculate start and end indices for current page
-        const startIndex = (currentPage - 1) * imagesPerPage;
-        const endIndex = startIndex + imagesPerPage;
-        const pageImages = filteredImages.slice(startIndex, endIndex);
-
-        if (pageImages.length === 0) {
-            gallery.innerHTML = '<p class="no-images">No images to display</p>';
-            return;
-        }
-
-        pageImages.forEach((img, index) => {
-            const actualIndex = startIndex + index; // Index in the full filtered array
-            const imgContainer = document.createElement('div');
-            imgContainer.className = 'gallery-item';
-            const image = document.createElement('img');
-            image.src = img.path;
-            image.alt = `Gallery image ${actualIndex + 1}`;
-            image.addEventListener('click', () => openLightbox(actualIndex));
-            imgContainer.appendChild(image);
-            // Add date and location
-            const meta = document.createElement('div');
-            meta.className = 'gallery-meta';
-            const date = new Date(img.date * 1000);
-            meta.innerHTML = `<span class='gallery-date'>${isNaN(date) ? '' : date.toLocaleDateString()}</span> <span class='gallery-location'>${img.location || ''}</span>`;
-            imgContainer.appendChild(meta);
-            gallery.appendChild(imgContainer);
-        });
-
-        // Scroll to top of gallery
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function displayPagination() {
-        const pagination = document.getElementById('pagination');
-        pagination.innerHTML = '';
-
-        const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
-
-        if (totalPages <= 1) {
-            return; // Don't show pagination if only one page
-        }
-
-        // Previous button
-        const prevBtn = document.createElement('button');
-        prevBtn.textContent = '« Previous';
-        prevBtn.className = 'pagination-btn' + (currentPage === 1 ? ' disabled' : '');
-        prevBtn.disabled = currentPage === 1;
-        prevBtn.addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                displayImages();
-                displayPagination();
-            }
-        });
-        pagination.appendChild(prevBtn);
-
-        // Page numbers
-        const maxVisiblePages = 5;
-        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-
-        // Adjust start if we're near the end
-        if (endPage - startPage < maxVisiblePages - 1) {
-            startPage = Math.max(1, endPage - maxVisiblePages + 1);
-        }
-
-        // First page and ellipsis
-        if (startPage > 1) {
-            addPageButton(1);
-            if (startPage > 2) {
-                const ellipsis = document.createElement('span');
-                ellipsis.className = 'pagination-ellipsis';
-                ellipsis.textContent = '...';
-                pagination.appendChild(ellipsis);
-            }
-        }
-
-        // Page numbers
-        for (let i = startPage; i <= endPage; i++) {
-            addPageButton(i);
-        }
-
-        // Last page and ellipsis
-        if (endPage < totalPages) {
-            if (endPage < totalPages - 1) {
-                const ellipsis = document.createElement('span');
-                ellipsis.className = 'pagination-ellipsis';
-                ellipsis.textContent = '...';
-                pagination.appendChild(ellipsis);
-            }
-            addPageButton(totalPages);
-        }
-
-        // Next button
-        const nextBtn = document.createElement('button');
-        nextBtn.textContent = 'Next »';
-        nextBtn.className = 'pagination-btn' + (currentPage === totalPages ? ' disabled' : '');
-        nextBtn.disabled = currentPage === totalPages;
-        nextBtn.addEventListener('click', () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                displayImages();
-                displayPagination();
-            }
-        });
-        pagination.appendChild(nextBtn);
-
-        // Add page info
-        const pageInfo = document.createElement('span');
-        pageInfo.className = 'pagination-info';
-        pageInfo.textContent = `Page ${currentPage} of ${totalPages} (${filteredImages.length} photos)`;
-        pagination.appendChild(pageInfo);
-    }
-
-    function addPageButton(pageNum) {
-        const pageBtn = document.createElement('button');
-        pageBtn.textContent = pageNum;
-        pageBtn.className = 'pagination-btn page-number' + (pageNum === currentPage ? ' active' : '');
-        pageBtn.addEventListener('click', () => {
-            currentPage = pageNum;
-            displayImages();
-            displayPagination();
-        });
-        document.getElementById('pagination').appendChild(pageBtn);
-    }
-
-    // Filtering
-    document.getElementById('team-filter').addEventListener('change', function() {
-        const value = this.value;
-        if (value === 'all') {
-            filteredImages = imageData;
-        } else {
-            filteredImages = imageData.filter(img => (img.team || '').toLowerCase() === value);
-        }
-        currentPage = 1; // Reset to first page when filtering
-        displayImages();
-        displayPagination();
+  function chip(key, count) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('aria-pressed', key === 'all');
+    b.innerHTML = (ALBUMS[key] || key) + '<span>' + count + '</span>';
+    b.addEventListener('click', function () {
+      chips.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      select(key);
     });
+    chips.appendChild(b);
+  }
 
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    
-    function openLightbox(index) {
-        currentImageIndex = index;
-        lightbox.style.display = 'flex';
-        showImage(index);
+  function select(key) {
+    list = key === 'all' ? all : all.filter(function (i) { return i.team === key; });
+    grid.innerHTML = ''; shown = 0; renderMore();
+  }
+
+  function renderMore() {
+    var end = Math.min(shown + PAGE, list.length);
+    for (var i = shown; i < end; i++) {
+      (function (idx) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'cham';
+        b.setAttribute('aria-label', 'Open photo ' + (idx + 1) + ' of ' + list.length);
+        var img = new Image(); img.src = '/' + list[idx].path; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+        b.appendChild(img);
+        b.addEventListener('click', function () { open(idx); });
+        grid.appendChild(b);
+      })(i);
     }
+    shown = end;
+    more.hidden = shown >= list.length;
+    if (!list.length) grid.innerHTML = '<p class="news-err">No photos in this album yet.</p>';
+  }
 
-    function showImage(index) {
-        lightboxImg.src = filteredImages[index].path;
-    }
+  function show() {
+    lbImg.src = '/' + list[cur].path;
+    lbCount.textContent = (cur + 1) + ' / ' + list.length;
+  }
+  function open(i) { cur = i; show(); lb.classList.add('show'); document.body.style.overflow = 'hidden'; lb.querySelector('.lb-x').focus(); }
+  function close() { lb.classList.remove('show'); document.body.style.overflow = ''; }
+  function step(n) { cur = (cur + n + list.length) % list.length; show(); }
 
-    // Close button
-    document.querySelector('.close-btn').onclick = () => {
-        lightbox.style.display = 'none';
-    };
+  lb.querySelector('.lb-x').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.lb-next').addEventListener('click', function () { step(1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('show')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+  // swipe on phones
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+  });
+  more.querySelector('button').addEventListener('click', renderMore);
 
-    // Previous/Next navigation
-    document.querySelector('.prev').onclick = () => {
-        currentImageIndex = (currentImageIndex - 1 + filteredImages.length) % filteredImages.length;
-        showImage(currentImageIndex);
-    };
-
-    document.querySelector('.next').onclick = () => {
-        currentImageIndex = (currentImageIndex + 1) % filteredImages.length;
-        showImage(currentImageIndex);
-    };
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'flex') {
-            if (e.key === 'ArrowLeft') document.querySelector('.prev').click();
-            if (e.key === 'ArrowRight') document.querySelector('.next').click();
-            if (e.key === 'Escape') document.querySelector('.close-btn').click();
-        }
-    });
-
-    // Load images when page loads
-    loadImages();
-});
+  fetch('/photos/image-index.json').then(function (r) { return r.json(); }).then(function (data) {
+    all = data.images || [];
+    var counts = { all: all.length };
+    all.forEach(function (i) { counts[i.team] = (counts[i.team] || 0) + 1; });
+    Object.keys(ALBUMS).forEach(function (k) { if (counts[k]) chip(k, counts[k]); });
+    select('all');
+  }).catch(function () {
+    grid.innerHTML = '<p class="news-err">Photos could not be loaded right now.</p>';
+  });
+})();
