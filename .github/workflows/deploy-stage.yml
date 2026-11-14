@@ -3,9 +3,13 @@ name: Deploy to staging
 # Every push to the `redesign` branch publishes a copy of that branch to
 # https://stage.hustlebaseballgilroy.org (served from the hustlebaseballgilroy/stage
 # repository). The live site (main branch) is never touched by this workflow.
+#
+# Staging is switched off since the redesign launched (2026-11-13): this now
+# only runs when started by hand from the Actions tab. To bring staging back,
+# re-enable GitHub Pages on the stage repo and restore the push trigger:
+#   push:
+#     branches: [redesign]
 on:
-  push:
-    branches: [redesign]
   workflow_dispatch:
 
 permissions:
