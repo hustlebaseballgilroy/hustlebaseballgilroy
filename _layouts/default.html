@@ -8,6 +8,9 @@
 {%- assign desc = page.description | default: "Hustle Baseball is a competitive youth travel baseball organization in Gilroy, California, offering 11U and 12U teams focused on fundamentals, sportsmanship and hustle." -%}
 <title>{{ page.title }}</title>
 <meta name="description" content="{{ desc }}">
+{%- if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}">
+{%- endif %}
 <meta name="author" content="Hustle Baseball">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#07080b">
@@ -43,6 +46,22 @@
   gtag('config', 'G-EK72WWNR3Z');
   gtag('config', 'AW-17128081732');
 </script>
+{%- unless page.head_extra contains 'ld+json' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Hustle Baseball",
+  "description": "Competitive youth travel baseball organization in Gilroy, California",
+  "url": "{{ canonical }}",
+  "logo": "{{ site.url }}/logo3.png",
+  "foundingDate": "2024",
+  "address": {"@type": "PostalAddress", "addressLocality": "Gilroy", "addressRegion": "CA", "addressCountry": "US"},
+  "sport": "Baseball",
+  "areaServed": {"@type": "City", "name": "Gilroy"}
+}
+</script>
+{%- endunless %}
 {{ page.head_extra }}
 </head>
 <body>
