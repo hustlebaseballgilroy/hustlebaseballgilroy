@@ -30,6 +30,8 @@ jobs:
           rm -rf .git .github
           # Staging gets its own domain.
           echo "stage.hustlebaseballgilroy.org" > CNAME
+          # Absolute URLs (share image, canonical links) point at staging.
+          sed -i 's|^url: .*|url: https://stage.hustlebaseballgilroy.org|' _config.yml
           # Keep search engines away from the staging copy.
           printf 'User-agent: *\nDisallow: /\n' > robots.txt
           find . -name '*.html' -print0 | xargs -0 sed -i 's#<head>#<head>\n<meta name="robots" content="noindex, nofollow">#I'
