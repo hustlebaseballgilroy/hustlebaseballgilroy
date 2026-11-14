@@ -63,6 +63,9 @@
 </script>
 {%- endunless %}
 {{ page.head_extra }}
+{%- if page.url == '/' or page.url == '/index.html' or page.url == '/signup.html' %}
+{% include tryout-event-ld.html %}
+{%- endif %}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
