@@ -4,37 +4,6 @@ PRODID:-//com.gc/NONSGML GameChanger - Back End//EN
 X-WR-CALNAME:Hustle Baseball 11U
 X-PUBLISHED-TTL:PT18000S
 BEGIN:VEVENT
-UID:44989003-98eb-4206-a257-6dbf8fe12915
-CREATED:20260704T202235Z
-LAST-MODIFIED:20260704T202235Z
-DTSTART:20260814T003000Z
-CLASS:PUBLIC
-SUMMARY:Strength And Conditioning Practice
-GEO:37.006399;-121.5688293
-LOCATION:7387 Monterey St\nGilroy CA
-STATUS:CONFIRMED
-DTEND:20260814T020000Z
-END:VEVENT
-BEGIN:VEVENT
-UID:23cf14ea-f0c1-4c94-9669-ed3788ffbd2b
-CREATED:20260717T222153Z
-LAST-MODIFIED:20260717T222450Z
-DTSTART:20260814T003000Z
-CLASS:PUBLIC
-SUMMARY:Strength And Conditioning
-GEO:37.006399;-121.5688293
-LOCATION:7387 Monterey St\nGilroy CA
-DESCRIPTION:Parking:\nStreet parking is available on Monterey Street, as w
- ell as the large public parking lot off Gourmet Alley.\n\nPlease Bring:\n\
- nAthletic/workout clothes\nAthletic shoes\nWater bottle\nTowel\nRemin
- der:\nPlease arrive 10–15 minutes early for your first session. All athlet
- es must have their Gymdesk registration and required onboarding documents 
- completed by a parent or legal guardian before participating. Please note 
- that all athletes must be picked up before 7 pm.
-STATUS:CONFIRMED
-DTEND:20260814T020000Z
-END:VEVENT
-BEGIN:VEVENT
 UID:f4fdc4dd-2237-4911-ade4-6ff8ea326542
 CREATED:20260810T023314Z
 LAST-MODIFIED:20260810T023314Z

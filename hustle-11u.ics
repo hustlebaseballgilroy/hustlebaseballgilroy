@@ -4,25 +4,6 @@ PRODID:-//com.gc/NONSGML GameChanger - Back End//EN
 X-WR-CALNAME:Hustle 12U
 X-PUBLISHED-TTL:PT18000S
 BEGIN:VEVENT
-UID:b2086d91-8be4-4048-92d6-a990f3363876
-CREATED:20260717T221958Z
-LAST-MODIFIED:20260717T222621Z
-DTSTART:20260814T003000Z
-CLASS:PUBLIC
-SUMMARY:Strength And Conditioning
-GEO:37.006399;-121.5688293
-LOCATION:7387 Monterey St\nGilroy CA
-DESCRIPTION:Parking:\nStreet parking is available on Monterey Street, as w
- ell as the large public parking lot off Gourmet Alley.\n\nPlease Bring:\n\
- nAthletic/workout clothes\nAthletic shoes\nWater bottle\nTowel\nRemin
- der:\nPlease arrive 10–15 minutes early for your first session. All athlet
- es must have their Gymdesk registration and required onboarding documents 
- completed by a parent or legal guardian before participating. Please note 
- that all athletes must be picked up before 7 pm.
-STATUS:CONFIRMED
-DTEND:20260814T020000Z
-END:VEVENT
-BEGIN:VEVENT
 UID:d190ea46-42db-4d51-ab5f-0a7536aaf46b
 CREATED:20260812T200526Z
 LAST-MODIFIED:20260812T232016Z
