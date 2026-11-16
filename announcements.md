@@ -1,25 +1,20 @@
-## End of Season Party - Saturday, November 14th!
-
-##### *Posted on November 13, 2026*
-
-What a season! Come celebrate with us at our **end of season party** this Saturday. Players, families, and siblings are all welcome!
-
-**Party Details:**
-- **When:** Saturday, November 14th, 2026 from 11:50 AM - 2:50 PM
-- **Where:** Paradise Park
-- **Address:** 365-399 La Crosse Dr, Morgan Hill, CA 95037
-
-Thank you to all of our players, families, coaches, and sponsors for an amazing season. We can't wait to see you there! 🎉⚾
-
-------
-
 ## Tryout Information Coming Soon!
 
-##### *Posted on November 13, 2026*
+##### *Posted on November 16, 2026*
 
 Get ready! Tryout information for our next travel ball season will be **released very shortly**. Keep an eye on this page for dates, locations, and age divisions.
 
 Want to be the first to know? [Register your interest online](signup.html) or email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org) and we'll reach out as soon as details are available.
+
+------
+
+## Thank You for an Amazing End of Season Party!
+
+##### *Posted on November 15, 2026*
+
+What a way to wrap up the season! Thank you to everyone who came out to our end of season party at Paradise Park on Saturday. We had lots of food, plenty of fun, and some great skills challenges. Players, siblings, and parents all got in on the action!
+
+Thank you to all of our players, families, coaches, and sponsors for an amazing season. We're already looking forward to the next one! 🎉⚾
 
 ------
 
