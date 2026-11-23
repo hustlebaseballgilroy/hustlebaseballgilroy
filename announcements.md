@@ -15,6 +15,8 @@ Registration is now open for our Spring/Summer 2027 travel ball season, and tryo
 - **11U:** Born on or after May 1, 2015
 - **12U:** Born on or after May 1, 2014
 
+**Plus, we're heading to Reno-Tahoe this summer!** 🏔️ Both our 11U and 12U teams will compete in the **Youth Baseball Nationals Reno-Tahoe**, June 18–24, 2027 in Sparks, NV. It's just one of the things we have planned for the season, and we'd love for your player to be part of it!
+
 **Registration is required.** The quickest way to register is our [online registration form](signup.html#register). It only takes about two minutes! Questions? Email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org).
 
 We can't wait to see you on the field! ⚾
