@@ -10,7 +10,7 @@
   <p class="tba-note"><b>{{ t.season }} tryout dates are coming soon.</b> <a href="/signup.html#register">Register now</a> and we'll email you the
     date, time and location as soon as they're set. They'll also be posted here and in <a href="/#news">Latest News</a>.</p>
   {%- endunless %}
-  <div class="tryout-grid">
+  <div class="tryout-grid{% unless t.flyer %} no-flyer{% endunless %}">
     <div class="tryout-card cham frame">
       <div class="inner cham">
         <div class="ages">
@@ -30,6 +30,10 @@
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12A7 7 0 1 0 5 10c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
           <div><div class="lbl">Location</div><div class="val">{{ t.venue | default: tba }}{% if t.address %}<small>{{ t.address }}</small>{% endif %}</div></div>
         </div>
+        <div class="info-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5h10M9 12h10M9 19h10"/><path d="M4 5l1 1 2-2M4 12l1 1 2-2M4 19l1 1 2-2"/></svg></div>
+          <div><div class="lbl">Equipment Required</div><div class="val equip-list">{{ t.equipment | join: '<i>•</i>' }}</div></div>
+        </div>
         <div class="t-actions">
           <a class="btn btn-pink btn-sm" href="/signup.html#register">Register Online</a>
           {%- if t.date %}
@@ -42,24 +46,23 @@
       </div>
     </div>
 
-    <div class="side-stack">
-      <div class="equip cham">
-        <h4>Equipment Required</h4>
-        <ul>{% for e in t.equipment %}<li>{{ e }}</li>{% endfor %}</ul>
-      </div>
-      <div class="finder cham">
+    {%- if t.flyer %}
+    <a class="flyer-shot cham" href="/{{ t.flyer }}" target="_blank" rel="noopener" title="Open the full-size flyer">
+      <img src="/{{ t.flyer }}" alt="Hustle Baseball {{ t.season }} tryouts flyer" loading="lazy" width="768" height="994">
+    </a>
+    {%- endif %}
+
+    <div class="finder cham">
+      <div class="f-head">
         <h4>Which <span class="brush">division?</span></h4>
         <p class="small">{% for c in t.cutoffs %}<b style="color:var(--{% cycle 'blue', 'pink' %})">{{ c.division }}</b>: born on/after {{ c.label }}{% unless forloop.last %} &nbsp;·&nbsp; {% endunless %}{% endfor %}</p>
+      </div>
+      <div class="f-input">
         <label for="dob">Player's birth date</label>
         <input type="date" id="dob" min="2008-01-01" max="2022-12-31">
-        <div class="f-res" id="fres" aria-live="polite"
-             data-cutoffs='[{% for c in t.cutoffs %}{"d":"{{ c.division }}","on":"{{ c.born_on_or_after }}","label":"{{ c.label }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]'><b>?</b><span>Enter a birth date to check eligibility.</span></div>
       </div>
-      {%- if t.flyer %}
-      <div class="flyer-shot cham">
-        <img src="/{{ t.flyer }}" alt="Hustle Baseball {{ t.season }} tryouts flyer" loading="lazy">
-      </div>
-      {%- endif %}
+      <div class="f-res" id="fres" aria-live="polite"
+           data-cutoffs='[{% for c in t.cutoffs %}{"d":"{{ c.division }}","on":"{{ c.born_on_or_after }}","label":"{{ c.label }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]'><b>?</b><span>Enter a birth date to check eligibility.</span></div>
     </div>
   </div>
 </div>

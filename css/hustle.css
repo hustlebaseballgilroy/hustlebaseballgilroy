@@ -221,9 +221,15 @@ section.band{padding:clamp(58px,8vw,104px) 0;position:relative}
   radial-gradient(1000px 420px at 88% 8%,rgba(43,155,245,.16),transparent 65%),
   radial-gradient(900px 400px at 6% 92%,rgba(255,20,120,.16),transparent 65%),
   var(--ink);}
-.tryout-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
+.tryout-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:stretch;
+  grid-template-areas:"card flyer" "finder finder"}
+.tryout-grid.no-flyer{grid-template-areas:"card finder";align-items:start}
+.tryout-grid>.tryout-card{grid-area:card}
+.tryout-grid>.flyer-shot{grid-area:flyer}
+.tryout-grid>.finder{grid-area:finder}
 .tryout-card{--c:22px;padding:3px;background:linear-gradient(140deg,var(--pink),var(--blue) 70%)}
-.tryout-card>.inner{background:#0b0d12;padding:clamp(24px,3.2vw,38px)}
+.tryout-card>.inner{background:#0b0d12;padding:clamp(24px,3.2vw,38px);height:100%;display:flex;flex-direction:column}
+.tryout-card .t-actions{margin-top:auto;padding-top:16px}
 .ages{
   display:flex;align-items:stretch;margin:0 0 26px;
   box-shadow:inset 0 0 0 2px rgba(255,255,255,.14);
@@ -245,17 +251,12 @@ section.band{padding:clamp(58px,8vw,104px) 0;position:relative}
 .info-row .lbl{font-family:'Barlow Condensed',sans-serif;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);line-height:1.4}
 .info-row .val{font-family:Anton,sans-serif;font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.12;text-transform:uppercase;letter-spacing:.01em}
 .info-row .val small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:.88rem;color:var(--mist);letter-spacing:0;text-transform:none;margin-top:5px;line-height:1.45}
-.side-stack{display:grid;gap:22px}
-.equip{--c:16px;background:#0b0d12;box-shadow:inset 0 0 0 2px var(--pink);padding:24px;text-align:center}
-.equip h4{font-family:Anton,sans-serif;text-transform:uppercase;color:var(--blue);letter-spacing:.06em;margin:0 0 14px;font-size:1.15rem}
-.equip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.equip li{font-family:Anton,sans-serif;text-transform:uppercase;font-size:1.05rem;letter-spacing:.03em}
-.equip li:not(:last-child)::after{content:'•';color:var(--pink);margin-left:10px}
+.equip-list i{font-style:normal;color:var(--pink);margin:0 .45em}
 .note{--c:14px;background:rgba(255,255,255,.04);padding:18px 20px;font-size:.86rem;color:var(--mist);
   box-shadow:inset 0 0 0 1px var(--edge)}
 .note b{color:#fff}
-.flyer-shot{--c:18px;padding:2px;background:linear-gradient(150deg,var(--blue),var(--pink))}
-.flyer-shot img{width:100%}
+.flyer-shot{--c:18px;padding:2px;background:linear-gradient(150deg,var(--blue),var(--pink));display:block;align-self:start}
+.flyer-shot img{width:100%;height:auto;display:block}
 
 /* about cards */
 .vmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
@@ -375,7 +376,10 @@ footer.site a:hover{color:var(--pink)}
 .finder{--c:16px;background:#0b0d12;box-shadow:inset 0 0 0 2px var(--blue);padding:22px}
 .finder h4{font-family:Anton,sans-serif;text-transform:uppercase;color:#fff;letter-spacing:.04em;margin:0 0 4px;font-size:1.25rem}
 .finder h4 .brush{font-size:1.15em}
-.finder p.small{margin:0 0 14px;color:var(--mist);font-size:.86rem}
+.finder p.small{margin:0;color:var(--mist);font-size:.86rem}
+.tryout-grid>.finder{display:grid;grid-template-columns:1.1fr 1fr 1.2fr;gap:14px 28px;align-items:end}
+.tryout-grid.no-flyer>.finder{grid-template-columns:1fr;align-items:stretch}
+.tryout-grid>.finder .f-res{margin-top:0}
 .finder label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
 .finder input{width:100%;font:inherit;font-size:1rem;padding:12px 14px;border:0;background:rgba(255,255,255,.06);color:#fff;box-shadow:inset 0 0 0 1px var(--edge);color-scheme:dark;
   clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
@@ -503,7 +507,9 @@ footer.site a:hover{color:var(--pink)}
   .hero-inner{grid-template-columns:1fr}
   .hero-art{order:-1;max-width:300px}
   .hero-art img{margin:0 auto}
-  .tryout-grid{grid-template-columns:1fr}
+  .tryout-grid,.tryout-grid.no-flyer{grid-template-columns:1fr;grid-template-areas:"card" "finder" "flyer"}
+  .tryout-grid>.finder{grid-template-columns:1fr;align-items:stretch}
+  .tryout-grid>.flyer-shot{max-width:480px;width:100%;justify-self:center}
   .f-grid{grid-template-columns:1fr 1fr}
   nav.main{display:none}
   .burger{display:block;margin-left:auto;background:var(--pink);border:0;color:#fff;padding:11px 15px;
