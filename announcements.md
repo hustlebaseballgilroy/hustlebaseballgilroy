@@ -15,7 +15,7 @@ Registration is now open for our Spring/Summer 2027 travel ball season, and tryo
 - **11U:** Born on or after May 1, 2015
 - **12U:** Born on or after May 1, 2014
 
-**Registration is required.** Email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org) with your child's name and the age level they're trying out for, or [sign up online here](signup.html).
+**Registration is required.** The quickest way to register is our [online registration form](signup.html#register). It only takes about two minutes! Questions? Email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org).
 
 We can't wait to see you on the field! ⚾
 
