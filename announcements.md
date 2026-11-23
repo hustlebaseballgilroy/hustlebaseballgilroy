@@ -1,10 +1,25 @@
-## Tryout Information Coming Soon!
+## Spring/Summer 2027 Tryouts - December 6th!
 
-##### *Posted on November 16, 2026*
+##### *Posted on November 23, 2026*
 
-Get ready! Tryout information for our next travel ball season will be **released very shortly**. Keep an eye on this page for dates, locations, and age divisions.
+Registration is now open for our Spring/Summer 2027 travel ball season, and tryouts are just around the corner!
 
-Want to be the first to know? [Register your interest online](signup.html) or email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org) and we'll reach out as soon as details are available.
+**Tryout Details:**
+- **When:** Sunday, December 6th, 2026 from 1:00-4:00 PM
+- **Where:** CRC - Field A
+- **Address:** 171 W Edmundson Ave, Morgan Hill, CA 95037
+- **Divisions:** 11U and 12U
+- **What to bring:** Bat, helmet, glove, and cleats are required
+
+**Age requirements:**
+- **11U:** Born on or after May 1, 2015
+- **12U:** Born on or after May 1, 2014
+
+**Registration is required.** Email us at [tryouts@hustlebaseballgilroy.org](mailto:tryouts@hustlebaseballgilroy.org) with your child's name and the age level they're trying out for, or [sign up online here](signup.html).
+
+We can't wait to see you on the field! ⚾
+
+<img src="/images/spring-summer-2027-tryouts.webp" alt="Spring/Summer 2027 Tryouts - December 6th, 2026" width="500" class="announcement-image">
 
 ------
 
