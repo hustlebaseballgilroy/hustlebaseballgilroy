@@ -21,7 +21,7 @@ Registration is now open for our Spring/Summer 2027 travel ball season, and tryo
 
 We can't wait to see you on the field! ⚾
 
-<img src="/images/spring-summer-2027-tryouts.webp" alt="Spring/Summer 2027 Tryouts - December 6th, 2026" width="500" class="announcement-image">
+<img src="/images/spring-summer-2027-tryouts.webp" alt="Spring/Summer 2027 Tryouts - December 6th, 2026. Also this summer: Reno-Tahoe Nationals, June 18-24, 2027 in Sparks, NV" width="500" class="announcement-image">
 
 ------
 
