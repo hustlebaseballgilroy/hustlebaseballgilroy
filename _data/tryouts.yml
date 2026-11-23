@@ -5,19 +5,19 @@
 # "dates coming soon" and points families to the registration form.
 # Once `date` passes, the site automatically shows a "these tryouts have ended"
 # note and hides the Add to Calendar button until new dates are entered here.
-season: Spring 2027
-date:                       # YYYY-MM-DD, e.g. 2027-02-20
-date_label:                 # e.g. February 20, 2027
-start:                      # 24-hour, Pacific time, e.g. "17:30"
-end:
-time_label:                 # e.g. 5:30 PM – 7:30 PM
+season: Spring/Summer 2027
+date: 2026-12-06                       # YYYY-MM-DD, e.g. 2027-02-20
+date_label: December 6, 2026                 # e.g. February 20, 2027
+start: "13:00"                      # 24-hour, Pacific time, e.g. "17:30"
+end: "16:00"
+time_label: 1:00 PM – 4:00 PM                 # e.g. 5:30 PM – 7:30 PM
 divisions: [11U, 12U]
-venue:                      # e.g. Paradise Park Softball Field
-address:                    # e.g. 365 La Crosse Dr, Morgan Hill, CA 95037
-maps_url:
+venue: CRC – Field A                      # e.g. Paradise Park Softball Field
+address: 171 W Edmundson Ave, Morgan Hill, CA 95037                    # e.g. 365 La Crosse Dr, Morgan Hill, CA 95037
+maps_url: https://www.google.com/maps/search/?api=1&query=171+W+Edmundson+Ave,+Morgan+Hill,+CA+95037
 email: tryouts@hustlebaseballgilroy.org
 equipment: [Bat, Helmet, Glove, Cleats]
-flyer:                      # e.g. images/spring-2027-tryouts.webp
+flyer: images/spring-summer-2027-tryouts.webp                      # e.g. images/spring-2027-tryouts.webp
 # Age cutoffs: a player is eligible for a division if born on or after the date.
 # These roll forward each year after August 1.
 cutoffs:
